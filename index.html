@@ -88,27 +88,6 @@
             border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
-        .sidebar-container {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            padding: 10px; border-radius: 9999px;
-            display: flex; flex-direction: column; gap: 0.85rem;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.04);
-        }
-        .sidebar-link {
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            width: 44px; height: 44px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%; color: #64748b;
-        }
-        .sidebar-link.active {
-            background-color: #2470ef; color: #ffffff !important;
-            box-shadow: 0 8px 24px rgba(36, 112, 239, 0.35);
-            transform: scale(1.12);
-        }
-
         #progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, #2470ef, #06b6d4); z-index: 400; transition: width 0.1s ease; }
 
         .btn-unified {
@@ -193,6 +172,7 @@
 </head>
 <body class="min-h-screen bg-[#f8fafc] text-slate-800 overflow-x-hidden relative digital-noise text-left">
 
+
 <!-- BARRE DE PROGRESSION -->
 <div id="progress-bar"></div>
 
@@ -225,30 +205,6 @@
         </button>
     </div>
 </nav>
-
-<!-- BARRE DE NAVIGATION LATÉRALE -->
-<div id="sidebar" class="fixed right-1 md:right-6 top-1/2 -translate-y-1/2 z-[110] hidden lg:flex sidebar-container shadow-xl">
-    <a href="#hero" class="sidebar-link active group relative" data-section="hero">
-        <i data-lucide="home" class="w-5 h-5"></i>
-        <span class="absolute right-14 bg-slate-900/95 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all duration-300 shadow-xl border border-white/10 whitespace-nowrap">Introduction</span>
-    </a>
-    <a href="#enjeux" class="sidebar-link group relative" data-section="enjeux">
-        <i data-lucide="target" class="w-5 h-5"></i>
-        <span class="absolute right-14 bg-slate-900/95 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all duration-300 shadow-xl border border-white/10 whitespace-nowrap">Les Enjeux</span>
-    </a>
-    <a href="#modules" class="sidebar-link group relative" data-section="modules">
-        <i data-lucide="blocks" class="w-5 h-5"></i>
-        <span class="absolute right-14 bg-slate-900/95 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all duration-300 shadow-xl border border-white/10 whitespace-nowrap">Les Modules</span>
-    </a>
-    <a href="#benefices" class="sidebar-link group relative" data-section="benefices">
-        <i data-lucide="trending-up" class="w-5 h-5"></i>
-        <span class="absolute right-14 bg-slate-900/95 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all duration-300 shadow-xl border border-white/10 whitespace-nowrap">Bénéfices</span>
-    </a>
-    <a href="#pourquoi" class="sidebar-link group relative" data-section="pourquoi">
-        <i data-lucide="help-circle" class="w-5 h-5"></i>
-        <span class="absolute right-14 bg-slate-900/95 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all duration-300 shadow-xl border border-white/10 whitespace-nowrap">Pourquoi comete.ai</span>
-    </a>
-</div>
 
 <!-- CONTENU PRINCIPAL -->
 <div id="main-content" class="w-full max-w-full overflow-hidden">
@@ -414,10 +370,10 @@
                                 </div>
 
                                 <!-- Slide 3: C-Quality -->
-                                <div id="hero-slide-cquality" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 bg-[#0f172a] flex flex-col justify-between p-4 sm:p-6 text-left text-white font-sans">
+                                <div id="hero-slide-cquality" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 bg-slate-900 flex flex-col justify-between p-4 sm:p-6 text-left text-white font-sans">
                                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
                                     <div class="flex justify-between items-center border-b border-white/10 pb-2">
-                                        <span class="font-mono text-[9px] sm:text-xs text-emerald-400 tracking-widest uppercase">Évaluation post-appel</span>
+                                        <span class="font-mono text-[9px] sm:text-xs text-emerald-400 tracking-widest uppercase font-sans">Évaluation post-appel</span>
                                         <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/99f0c6e8-b352-4cf3-bea2-b97465d6346f.png" class="h-6 object-contain" alt="C-Quality" />
                                     </div>
                                     <div class="space-y-4 my-auto">
@@ -430,9 +386,9 @@
                                                 <span class="text-emerald-400 font-mono font-black text-xs sm:text-lg">96 / 100</span>
                                             </div>
                                             <div class="space-y-1 text-[9px] sm:text-[11px] leading-relaxed">
-                                                <div class="flex justify-between"><span class="text-slate-400">Formule de politesse :</span><span class="text-emerald-400">Excellente (10/10)</span></div>
-                                                <div class="flex justify-between"><span class="text-slate-400">Réglementaire & RGPD :</span><span class="text-emerald-400 font-bold">Conforme (20/20)</span></div>
-                                                <div class="flex justify-between"><span class="text-slate-400">Traitement de l'objection :</span><span class="text-emerald-400 font-bold">Parfait (30/30)</span></div>
+                                                <div class="flex justify-between"><span class="text-slate-400 font-sans">Formule de politesse :</span><span class="text-emerald-400 font-sans">Excellente (10/10)</span></div>
+                                                <div class="flex justify-between"><span class="text-slate-400 font-sans font-sans">Réglementaire & RGPD :</span><span class="text-emerald-400 font-bold font-sans">Conforme (20/20)</span></div>
+                                                <div class="flex justify-between"><span class="text-slate-400 font-sans font-sans font-sans">Traitement de l'objection :</span><span class="text-emerald-400 font-bold font-sans font-sans font-sans">Parfait (30/30)</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -462,8 +418,8 @@
                                             <span class="text-[10px] font-bold text-cyan-600 font-mono">82%</span>
                                         </div>
                                         <div class="space-y-1 font-mono text-[9px] sm:text-[10px] bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                                            <div class="flex justify-between"><span class="text-slate-400">NOM SÉLECTIONNÉ :</span><span class="text-slate-800 font-bold">DUPONT THIERRY</span></div>
-                                            <div class="flex justify-between"><span class="text-slate-400">EXPIRATION :</span><span class="text-emerald-600 font-bold">CONFORME (EXP: 2031)</span></div>
+                                            <div class="flex justify-between"><span class="text-slate-400 font-sans">NOM SÉLECTIONNÉ :</span><span class="text-slate-800 font-bold font-sans">DUPONT THIERRY</span></div>
+                                            <div class="flex justify-between"><span class="text-slate-400 font-sans font-sans">EXPIRATION :</span><span class="text-emerald-600 font-bold font-sans">CONFORME (EXP: 2031)</span></div>
                                         </div>
                                     </div>
                                     <div class="border-t border-slate-100 pt-2 flex justify-between items-center text-[9px] text-slate-400 font-mono">
@@ -509,7 +465,7 @@
                 <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[250px] group">
                     <span class="w-12 h-12 rounded-xl bg-blue-50 text-themeAccent flex items-center justify-center mb-4 transition-transform group-hover:scale-110"><i data-lucide="user-check" class="w-6 h-6"></i></span>
                     <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-2 font-sans">Accompagner les conseillers en temps réel</h3>
+                        <h3 class="font-extrabold text-slate-800 text-base mb-2 font-sans font-sans">Accompagner les conseillers en temps réel</h3>
                         <p class="text-slate-500 text-xs leading-relaxed font-light">Pousser l'information exacte au moment précis de l'interaction pour éliminer le temps de recherche documentaire ou de procédure.</p>
                     </div>
                 </div>
@@ -517,7 +473,7 @@
                 <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[250px] group">
                     <span class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4 transition-transform group-hover:scale-110"><i data-lucide="lock" class="w-6 h-6"></i></span>
                     <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-2 font-sans">Sécuriser les échanges sensibles</h3>
+                        <h3 class="font-extrabold text-slate-800 text-base mb-2 font-sans font-sans">Sécuriser les échanges sensibles</h3>
                         <p class="text-slate-500 text-xs leading-relaxed font-light">Collecter de façon hautement sécurisée les documents, données bancaires et consentements réglementaires sans friction pour l'utilisateur.</p>
                     </div>
                 </div>
@@ -525,7 +481,7 @@
                 <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[250px] group">
                     <span class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-4 transition-transform group-hover:scale-110"><i data-lucide="check-circle" class="w-6 h-6"></i></span>
                     <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-2 font-sans">Industrialiser le contrôle qualité</h3>
+                        <h3 class="font-extrabold text-slate-800 text-base mb-2 font-sans font-sans">Industrialiser le contrôle qualité</h3>
                         <p class="text-slate-500 text-xs leading-relaxed font-light">Évaluer automatiquement 100 % des appels au lieu de se contenter d’échantillons manuels marginaux, subjectifs et lents.</p>
                     </div>
                 </div>
@@ -541,7 +497,7 @@
                 <div class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[250px] group">
                     <span class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 transition-transform group-hover:scale-110"><i data-lucide="zap" class="w-6 h-6"></i></span>
                     <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-2 font-sans">Accélérer le traitement des demandes</h3>
+                        <h3 class="font-extrabold text-slate-800 text-base mb-2">Accélérer le traitement des demandes</h3>
                         <p class="text-slate-500 text-xs leading-relaxed font-light">Automatiser le traitement documentaire et l’analyse OCR des justificatifs pour accélérer la contractualisation de vos dossiers.</p>
                     </div>
                 </div>
@@ -571,10 +527,12 @@
         </div>
     </section>
 
-    <!-- 3. CONSTELLATION ORBITALE DES MODULES EN CARROUSEL HAUT DE GAMME REVISITÉ -->
-    <section id="modules" class="py-16 md:py-24 overflow-hidden text-left relative w-full border-t border-slate-200/80 bg-white transition-all duration-1000">
-        <!-- Overlay de trame technique légère en arrière-plan -->
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:3.5rem_3rem] opacity-40 pointer-events-none"></div>
+    <!-- 3. CONSTELLATION ORBITALE DES MODULES EN CARROUSEL AVEC LOGOS BLANCS ET SANS EFFET CARREAU -->
+    <section id="modules" class="py-16 md:py-28 overflow-hidden text-left relative w-full border-t border-slate-200/80 bg-white transition-all duration-1000">
+        <!-- Image d'arrière-plan technologique fluide et semi-voyante (Pas d'effet de carreau type image_1ee2bf.png) -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover opacity-20 object-center mix-blend-luminosity" alt="Arrière-plan technique comete.ai" />
+        </div>
         
         <!-- Halo de Glow Ambiant Dynamique - Couleur de fond changeant en JS -->
         <div id="modules-ambient-glow" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full filter blur-[140px] opacity-10 pointer-events-none transition-all duration-1000 ease-in-out bg-blue-500"></div>
@@ -615,22 +573,22 @@
                 <div id="modules-viewport" class="overflow-visible w-full py-10 select-none relative cursor-grab active:cursor-grabbing">
                     <div id="modules-track" class="flex gap-8 transition-transform duration-500 ease-out" style="transform: translateX(0px);">
                         
-                        <!-- Carte 1: SmartPush -->
-                        <div onclick="window.setModuleIndex(0)" class="carousel-card w-[290px] sm:w-[350px] md:w-[410px] min-h-[460px] shrink-0 bg-white border border-slate-150 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none">
+                        <!-- Carte 1: SmartPush (Tous les logos blancs avec brightness-0 invert, badges centralisés) -->
+                        <div onclick="window.setModuleIndex(0)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
                             <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/ce02a29a-07b9-49f7-b36c-036e4a6c380a.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300" alt="SmartPush" />
-                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-blue-600 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/15">TEMPS RÉEL</span>
+                                <div class="flex flex-col items-center gap-3">
+                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/15">TEMPS RÉEL</span>
+                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/ce02a29a-07b9-49f7-b36c-036e4a6c380a.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300 brightness-0 invert" alt="SmartPush" />
                                 </div>
-                                <div class="space-y-2">
+                                <div class="space-y-2 text-center sm:text-left">
                                     <span class="subtitle text-xs font-bold text-slate-400 block font-mono uppercase tracking-wider">Assistance temps réel au conseiller</span>
-                                    <p class="description text-slate-500 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
+                                    <p class="description text-slate-300 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
                                         Pendant l'appel, SmartPush analyse la conversation en continu et pousse automatiquement au conseiller les informations dont il a besoin : réponse à une objection, rappel d'une offre, point réglementaire à mentionner, procédure à suivre. L'information arrive au bon moment, sans que le conseiller ait à interrompre l'échange pour chercher.
                                     </p>
                                 </div>
                             </div>
-                            <!-- Resserrement du gap et alignement parfaitement centré verticalement (items-center) as requested in image_1f4f9c.png -->
-                            <div class="benefit-box mt-4 pt-4 border-t border-slate-100 flex items-center gap-4 transition-all duration-300">
+                            <!-- Bloc bénéfice resserré et aligné verticalement (référence image_1f4f9c.png) -->
+                            <div class="benefit-box mt-4 pt-4 border-t border-slate-800 flex items-center gap-4 transition-all duration-300">
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-blue-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="zap" class="w-6 h-6"></i>
                                 </span>
@@ -642,21 +600,20 @@
                         </div>
 
                         <!-- Carte 2: SpeechControl -->
-                        <div onclick="window.setModuleIndex(1)" class="carousel-card w-[290px] sm:w-[350px] md:w-[410px] min-h-[460px] shrink-0 bg-white border border-slate-150 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none">
+                        <div onclick="window.setModuleIndex(1)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
                             <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/26e9f35b-9676-461e-bba6-85ae40d24007.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300" alt="SpeechControl" />
-                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-red-600 bg-red-500/10 px-3 py-1 rounded-full border border-red-500/15">CONFORMITÉ</span>
+                                <div class="flex flex-col items-center gap-3">
+                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-red-400 bg-red-500/10 px-3 py-1 rounded-full border border-red-500/15">CONFORMITÉ</span>
+                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/26e9f35b-9676-461e-bba6-85ae40d24007.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300 brightness-0 invert" alt="SpeechControl" />
                                 </div>
-                                <div class="space-y-2">
+                                <div class="space-y-2 text-center sm:text-left">
                                     <span class="subtitle text-xs font-bold text-slate-400 block font-mono uppercase tracking-wider">Conformité du discours en continu</span>
-                                    <p class="description text-slate-500 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
+                                    <p class="description text-slate-300 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
                                         SpeechControl écoute chaque appel en temps réel et vérifie que le discours du conseiller respecte les scripts, les mentions obligatoires et les exigences réglementaires en vigueur. En cas d'écart, une alerte discrète est envoyée — au conseiller, au superviseur, ou aux deux selon les règles configurées.
                                     </p>
                                 </div>
                             </div>
-                            <!-- Resserrement du gap et alignement parfaitement centré verticalement (items-center) as requested in image_1f4f9c.png -->
-                            <div class="benefit-box mt-4 pt-4 border-t border-slate-100 flex items-center gap-4 transition-all duration-300">
+                            <div class="benefit-box mt-4 pt-4 border-t border-slate-800 flex items-center gap-4 transition-all duration-300">
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-red-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="shield" class="w-6 h-6"></i>
                                 </span>
@@ -668,21 +625,20 @@
                         </div>
 
                         <!-- Carte 3: C-Insight -->
-                        <div onclick="window.setModuleIndex(2)" class="carousel-card w-[290px] sm:w-[350px] md:w-[410px] min-h-[460px] shrink-0 bg-white border border-slate-150 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none">
+                        <div onclick="window.setModuleIndex(2)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
                             <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/d9a7b7dc-6cd6-43be-9c1e-381296651b71.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300" alt="C-Insight" />
-                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-sky-600 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/15">ANALYTICS</span>
+                                <div class="flex flex-col items-center gap-3">
+                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/15">ANALYTICS</span>
+                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/d9a7b7dc-6cd6-43be-9c1e-381296651b71.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300 brightness-0 invert" alt="C-Insight" />
                                 </div>
-                                <div class="space-y-2">
+                                <div class="space-y-2 text-center sm:text-left">
                                     <span class="subtitle text-xs font-bold text-slate-400 block font-mono uppercase tracking-wider">Connaissance client par speech analytics</span>
-                                    <p class="description text-slate-500 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
+                                    <p class="description text-slate-300 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
                                         C-Insight transforme chaque conversation en donnée structurée. Motifs d'appel, sentiment client, thèmes récurrents, points de friction, signaux faibles : tout est capté, catégorisé et restitué sous forme de tableaux de bord exploitables. Les directions métier disposent d'une meilleure connaissance client.
                                     </p>
                                 </div>
                             </div>
-                            <!-- Resserrement du gap et alignement parfaitement centré verticalement (items-center) as requested in image_1f4f9c.png -->
-                            <div class="benefit-box mt-4 pt-4 border-t border-slate-100 flex items-center gap-4 transition-all duration-300">
+                            <div class="benefit-box mt-4 pt-4 border-t border-slate-800 flex items-center gap-4 transition-all duration-300">
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-sky-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="brain" class="w-6 h-6"></i>
                                 </span>
@@ -694,21 +650,20 @@
                         </div>
 
                         <!-- Carte 4: C-Quality -->
-                        <div onclick="window.setModuleIndex(3)" class="carousel-card w-[290px] sm:w-[350px] md:w-[410px] min-h-[460px] shrink-0 bg-white border border-slate-150 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none">
+                        <div onclick="window.setModuleIndex(3)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
                             <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/99f0c6e8-b352-4cf3-bea2-b97465d6346f.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300" alt="C-Quality" />
-                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-emerald-600 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/15">AUDIT QUALITÉ</span>
+                                <div class="flex flex-col items-center gap-3">
+                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/15">AUDIT QUALITÉ</span>
+                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/99f0c6e8-b352-4cf3-bea2-b97465d6346f.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300 brightness-0 invert" alt="C-Quality" />
                                 </div>
-                                <div class="space-y-2">
+                                <div class="space-y-2 text-center sm:text-left">
                                     <span class="subtitle text-xs font-bold text-slate-400 block font-mono uppercase tracking-wider">Évaluation qualité automatisée</span>
-                                    <p class="description text-slate-500 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
+                                    <p class="description text-slate-300 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
                                         Évaluer 100 % des appels, sans mobiliser vos superviseurs sur des grilles d'écoute manuelles. C-Quality applique vos critères qualité à chaque interaction et génère automatiquement une évaluation structurée : score global, points forts, axes d'amélioration, verbatims ciblés. Le superviseur intervient là où c'est nécessaire — sur les cas qui le méritent vraiment.
                                     </p>
                                 </div>
                             </div>
-                            <!-- Resserrement du gap et alignement parfaitement centré verticalement (items-center) as requested in image_1f4f9c.png -->
-                            <div class="benefit-box mt-4 pt-4 border-t border-slate-100 flex items-center gap-4 transition-all duration-300">
+                            <div class="benefit-box mt-4 pt-4 border-t border-slate-800 flex items-center gap-4 transition-all duration-300">
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="award" class="w-6 h-6"></i>
                                 </span>
@@ -720,21 +675,20 @@
                         </div>
 
                         <!-- Carte 5: C-Capture -->
-                        <div onclick="window.setModuleIndex(4)" class="carousel-card w-[290px] sm:w-[350px] md:w-[410px] min-h-[460px] shrink-0 bg-white border border-slate-150 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none">
+                        <div onclick="window.setModuleIndex(4)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
                             <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/df852063-2003-471c-8f9d-f6f5165f716c.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300" alt="C-Capture" />
-                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-cyan-600 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/15">OCR / SAISIE</span>
+                                <div class="flex flex-col items-center gap-3">
+                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/15">OCR / SAISIE</span>
+                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/df852063-2003-471c-8f9d-f6f5165f716c.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300 brightness-0 invert" alt="C-Capture" />
                                 </div>
-                                <div class="space-y-2">
+                                <div class="space-y-2 text-center sm:text-left">
                                     <span class="subtitle text-xs font-bold text-slate-400 block font-mono uppercase tracking-wider">Traitement intelligent des documents</span>
-                                    <p class="description text-slate-500 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
+                                    <p class="description text-slate-300 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
                                         Dès qu'un client uploade un document — justificatif d'identité, RIB, contrat, attestation — C-Capture prend le relais : extraction automatique des données, structuration, intégration dans le CRM. Plus de saisie manuelle, plus de va-et-vient entre systèmes, plus de dossiers en attente faute de données exploitables.
                                     </p>
                                 </div>
                             </div>
-                            <!-- Resserrement du gap et alignement parfaitement centré verticalement (items-center) as requested in image_1f4f9c.png -->
-                            <div class="benefit-box mt-4 pt-4 border-t border-slate-100 flex items-center gap-4 transition-all duration-300">
+                            <div class="benefit-box mt-4 pt-4 border-t border-slate-800 flex items-center gap-4 transition-all duration-300">
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-cyan-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="scan" class="w-6 h-6"></i>
                                 </span>
@@ -746,21 +700,20 @@
                         </div>
 
                         <!-- Carte 6: C-Protect -->
-                        <div onclick="window.setModuleIndex(5)" class="carousel-card w-[290px] sm:w-[350px] md:w-[410px] min-h-[460px] shrink-0 bg-white border border-slate-150 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none">
+                        <div onclick="window.setModuleIndex(5)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
                             <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/fd6b01a1-6e01-4978-acc2-149d3172a601.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300" alt="C-Protect" />
-                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-indigo-600 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/15">SÉCURITÉ PCI</span>
+                                <div class="flex flex-col items-center gap-3">
+                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/15">SÉCURITÉ PCI</span>
+                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/fd6b01a1-6e01-4978-acc2-149d3172a601.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300 brightness-0 invert" alt="C-Protect" />
                                 </div>
-                                <div class="space-y-2">
+                                <div class="space-y-2 text-center sm:text-left">
                                     <span class="subtitle text-xs font-bold text-slate-400 block font-mono uppercase tracking-wider">Collecte sécurisée des coordonnées bancaires</span>
-                                    <p class="description text-slate-500 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
+                                    <p class="description text-slate-300 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
                                         Lorsque la transaction nécessite la collecte de coordonnées bancaires, C-Protect prend la main : le client est basculé vers un bot vocal sécurisé et dédié, le conseiller ne capte aucune donnée sensible, et la conformité PCI-DSS est assurée par architecture — pas par procédure.
                                     </p>
                                 </div>
                             </div>
-                            <!-- Resserrement du gap et alignement parfaitement centré verticalement (items-center) as requested in image_1f4f9c.png -->
-                            <div class="benefit-box mt-4 pt-4 border-t border-slate-100 flex items-center gap-4 transition-all duration-300">
+                            <div class="benefit-box mt-4 pt-4 border-t border-slate-800 flex items-center gap-4 transition-all duration-300">
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-indigo-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="lock" class="w-6 h-6"></i>
                                 </span>
@@ -772,21 +725,20 @@
                         </div>
 
                         <!-- Carte 7: C-Visio -->
-                        <div onclick="window.setModuleIndex(6)" class="carousel-card w-[290px] sm:w-[350px] md:w-[410px] min-h-[460px] shrink-0 bg-white border border-slate-150 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none font-sans">
+                        <div onclick="window.setModuleIndex(6)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
                             <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/675be097-0ed5-4aab-ac78-77ebce5e9a1c.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300" alt="C-Visio" />
-                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-purple-600 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/15 font-sans">SUPPORT VIDÉO</span>
+                                <div class="flex flex-col items-center gap-3">
+                                    <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/15">SUPPORT VIDÉO</span>
+                                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/675be097-0ed5-4aab-ac78-77ebce5e9a1c.png" class="logo-img h-8 sm:h-9 w-auto object-contain transition-all duration-300 brightness-0 invert" alt="C-Visio" />
                                 </div>
-                                <div class="space-y-2">
-                                    <span class="subtitle text-xs font-bold text-slate-400 block font-mono uppercase tracking-wider font-sans">Accompagnement client en vidéo temps réel</span>
-                                    <p class="description text-slate-500 text-xs sm:text-[13px] font-light leading-relaxed pt-1 font-sans">
+                                <div class="space-y-2 text-center sm:text-left">
+                                    <span class="subtitle text-xs font-bold text-slate-400 block font-mono uppercase tracking-wider">Accompagnement client en vidéo temps réel</span>
+                                    <p class="description text-slate-300 text-xs sm:text-[13px] font-light leading-relaxed pt-1">
                                         Pour les situations complexes qui nécessitent de 'voir' pour comprendre — une installation technique, un document difficile à décrire, une situation matérielle à évaluer — C-Visio permet au conseiller de basculer en vidéo avec le client depuis le canal voix. Visualisation déportée, annotation en temps réel, co-browsing possible.
                                     </p>
                                 </div>
                             </div>
-                            <!-- Resserrement du gap et alignement parfaitement centré verticalement (items-center) as requested in image_1f4f9c.png -->
-                            <div class="benefit-box mt-4 pt-4 border-t border-slate-100 flex items-center gap-4 transition-all duration-300">
+                            <div class="benefit-box mt-4 pt-4 border-t border-slate-800 flex items-center gap-4 transition-all duration-300">
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-purple-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="video" class="w-6 h-6"></i>
                                 </span>
@@ -815,90 +767,102 @@
         </div>
     </section>
 
-    <!-- 4. SECTION 3 : DES BÉNÉFICES CONCRETS POUR CHAQUE MÉTIER -->
-    <section id="benefices" class="py-16 md:py-24 bg-[#f8fafc] text-left relative border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 relative">
-            <div class="text-center max-w-4xl mx-auto mb-16">
-                <span class="px-3.5 py-1 bg-blue-50 text-themeAccent rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-3">RETOMBÉES MAJEURES</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 tracking-tight leading-tight">
-                    Conçu pour créer de la valeur <span class="text-gradient-animated font-black">à chaque interaction</span>
+    <!-- 4. SECTION 3 : DES BÉNÉFICES CONCRETS POUR CHAQUE MÉTIER - REDESIGN MAGNIFIÉ ET ÉCLATANT -->
+    <section id="benefices" class="py-20 md:py-28 bg-gradient-to-b from-[#f8fafc] to-[#eef2f6] text-left relative overflow-hidden border-t border-slate-100">
+        <!-- Effets lumineux géométriques flottants -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-blue-100/40 to-cyan-100/40 rounded-full filter blur-[150px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <span class="px-4 py-1.5 bg-blue-50/80 text-themeAccent border border-blue-100/80 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-4 shadow-sm backdrop-blur-sm">RETOMBÉES MAJEURES</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Conçu pour créer de la valeur <br class="hidden sm:inline"><span class="text-gradient-animated">à chaque interaction</span>
                 </h2>
-                <p class="text-slate-505 text-sm sm:text-base font-light max-w-3xl mx-auto mt-4 leading-relaxed">
+                <p class="text-slate-500 text-sm sm:text-base font-light max-w-2xl mx-auto mt-5 leading-relaxed">
                     Découvrez comment C-Suite transforme en profondeur les tâches de vos conseillers, sécurise vos opérations et structure une excellence durable à tous les niveaux.
                 </p>
             </div>
 
-            <!-- Grille Premium de Bénéfices Métiers -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Grille Premium de Bénéfices Métiers en Glassmorphic Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto">
                 
                 <!-- Card 1 -->
-                <div class="bg-white border border-slate-200/80 p-6 sm:p-8 rounded-2xl shadow-sm glow-card">
-                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-themeAccent flex items-center justify-center mb-6"><i data-lucide="users" class="w-6 h-6"></i></div>
-                    <h3 class="font-extrabold text-slate-800 text-lg mb-4">Des conseillers plus performants</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-themeAccent mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Réduction drastique du temps de recherche d'information en ligne
+                <div class="relative bg-white/70 backdrop-blur-lg border border-slate-200/60 p-8 rounded-[32px] transition-all duration-300 shadow-[0_10px_35px_-10px_rgba(15,23,42,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(36,112,239,0.15)] hover:border-themeAccent/40 hover:-translate-y-2 group overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full filter blur-2xl group-hover:scale-125 transition-transform duration-500 pointer-events-none"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 text-[#2470ef] flex items-center justify-center mb-8 border border-blue-500/15 shadow-sm group-hover:scale-110 group-hover:bg-[#2470ef] group-hover:text-white transition-all duration-300">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-xl mb-6 tracking-tight">Des conseillers plus performants</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Réduction drastique du temps de recherche d'information en ligne</span>
                         </li>
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-themeAccent mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Montée en compétence initiale et continue accélérée
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Montée en compétence initiale et continue accélérée</span>
                         </li>
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-themeAccent mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Réponses plus homogènes et conformes aux chartes de la marque
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Réponses plus homogènes et conformes aux chartes de la marque</span>
                         </li>
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-themeAccent mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Meilleure gestion immédiate des situations conflictuelles
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Meilleure gestion immédiate des situations conflictuelles</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white border border-slate-200/80 p-6 sm:p-8 rounded-2xl shadow-sm glow-card">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-6"><i data-lucide="smile" class="w-6 h-6"></i></div>
-                    <h3 class="font-extrabold text-slate-800 text-lg mb-4">Une expérience client renforcée</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-cyan-600 mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Réduction massive de l'effort client sur tous les canaux
+                <div class="relative bg-white/70 backdrop-blur-lg border border-slate-200/60 p-8 rounded-[32px] transition-all duration-300 shadow-[0_10px_35px_-10px_rgba(15,23,42,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(6,182,212,0.15)] hover:border-cyan-500/40 hover:-translate-y-2 group overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full filter blur-2xl group-hover:scale-125 transition-transform duration-500 pointer-events-none"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-8 border border-cyan-500/15 shadow-sm group-hover:scale-110 group-hover:bg-cyan-500/80 group-hover:text-white transition-all duration-300">
+                        <i data-lucide="smile" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-xl mb-6 tracking-tight">Une expérience client renforcée</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Réduction massive de l'effort client sur tous les canaux</span>
                         </li>
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-cyan-600 mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Diminution visible des temps moyens de traitement (TMT)
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Diminution visible des temps moyens de traitement (TMT)</span>
                         </li>
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-cyan-600 mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Amélioration du taux de résolution dès le premier contact (FCR)
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Amélioration du taux de résolution dès le premier contact (FCR)</span>
                         </li>
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-cyan-600 mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Parcours plus fluides, cohérents et transparents
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Parcours plus fluides, cohérents et transparents</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white border border-slate-200/80 p-6 sm:p-8 rounded-2xl shadow-sm glow-card">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6"><i data-lucide="activity" class="w-6 h-6"></i></div>
-                    <h3 class="font-extrabold text-slate-800 text-lg mb-4">Une qualité maîtrisée</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-indigo-600 mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Analyse automatisée de 100 % des interactions, sans omission
+                <div class="relative bg-white/70 backdrop-blur-lg border border-slate-200/60 p-8 rounded-[32px] transition-all duration-300 shadow-[0_10px_35px_-10px_rgba(15,23,42,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(99,102,241,0.15)] hover:border-indigo-500/40 hover:-translate-y-2 group overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-400/10 rounded-full filter blur-2xl group-hover:scale-125 transition-transform duration-500 pointer-events-none"></div>
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center mb-8 border border-indigo-500/15 shadow-sm group-hover:scale-110 group-hover:bg-indigo-500/80 group-hover:text-white transition-all duration-300">
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-xl mb-6 tracking-tight">Une qualité maîtrisée</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Analyse automatisée de 100 % des interactions, sans omission</span>
                         </li>
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-indigo-600 mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Détection instantanée et alertes ciblées sur les écarts de script
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Détection instantanée et alertes ciblées sur les écarts de script</span>
                         </li>
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-indigo-600 mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Pilotage complet de l'assurance qualité en continu (QA)
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Pilotage complet de l'assurance qualité en continu (QA)</span>
                         </li>
-                        <li class="flex items-start gap-2.5 text-xs text-slate-600 font-light leading-relaxed">
-                            <span class="text-indigo-600 mt-1 shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-                            Garantie de respect renforcé des normes réglementaires et RGPD
+                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+                            <span>Garantie de respect renforcé des normes réglementaires et RGPD</span>
                         </li>
                     </ul>
                 </div>
@@ -985,7 +949,7 @@
                 </div>
 
                 <!-- Pilier 2 -->
-                <div class="bg-white border border-[#e2e8f0] p-6 sm:p-8 rounded-3xl flex flex-col justify-between hover:border-[#2470ef]/40 hover:shadow-lg transition-all duration-300">
+                <div class="bg-white border border-slate-200/80 p-6 sm:p-8 rounded-3xl flex flex-col justify-between hover:border-[#2470ef]/40 hover:shadow-lg transition-all duration-300">
                     <div class="space-y-4">
                         <span class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center"><i data-lucide="cpu" class="w-6 h-6"></i></span>
                         <h3 class="font-extrabold text-slate-900 text-lg">Intégration & Développement</h3>
@@ -1000,7 +964,7 @@
                 </div>
 
                 <!-- Pilier 3 -->
-                <div class="bg-white border border-[#e2e8f0] p-6 sm:p-8 rounded-3xl flex flex-col justify-between hover:border-[#2470ef]/40 hover:shadow-lg transition-all duration-300">
+                <div class="bg-white border border-slate-200/80 p-6 sm:p-8 rounded-3xl flex flex-col justify-between hover:border-[#2470ef]/40 hover:shadow-lg transition-all duration-300">
                     <div class="space-y-4">
                         <span class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center"><i data-lucide="activity" class="w-6 h-6"></i></span>
                         <h3 class="font-extrabold text-slate-900 text-lg">Opérations & Performance</h3>
@@ -1009,7 +973,7 @@
                             <br><br>
                             Nous combinons l'expertise de nos conseillers et gestionnaires avec nos solutions digitales et IA pour améliorer durablement la qualité, la productivité et l'expérience client.
                             <br><br>
-                            Chaque solution que nous concevons est pensée pour opacity des résultats mesurables dans vos opérations quotidiennes.
+                            Chaque solution que nous concevons est pensée pour produire des résultats mesurables dans vos opérations quotidiennes.
                         </p>
                     </div>
                 </div>
@@ -1078,14 +1042,15 @@
 
 <!-- CODAGE JAVASCRIPT DU SIMULATEUR LAPTOP HERO ET DU CARROUSEL DES MODULES -->
 <script>
+    // Configuration des couleurs de lueur ambiante des modules
     const moduleThemes = {
-        0: { glowColor: 'rgba(36, 112, 239, 0.25)', border: '#2470ef' }, // SmartPush - Bleu
-        1: { glowColor: 'rgba(239, 68, 68, 0.25)', border: '#ef4444' },   // SpeechControl - Rouge
-        2: { glowColor: 'rgba(14, 165, 233, 0.25)', border: '#0ea5e9' },  // C-Insight - Ciel
-        3: { glowColor: 'rgba(16, 185, 129, 0.25)', border: '#10b981' },  // C-Quality - Émeraude
-        4: { glowColor: 'rgba(6, 182, 212, 0.25)', border: '#06b6d4' },   // C-Capture - Cyan
-        5: { glowColor: 'rgba(99, 102, 241, 0.25)', border: '#6366f1' },  // C-Protect - Indigo
-        6: { glowColor: 'rgba(168, 85, 247, 0.25)', border: '#a855f7' }   // C-Visio - Violet
+        0: { glowColor: 'rgba(36, 112, 239, 0.18)', border: '#2470ef' }, // SmartPush - Bleu
+        1: { glowColor: 'rgba(239, 68, 68, 0.18)', border: '#ef4444' },   // SpeechControl - Rouge
+        2: { glowColor: 'rgba(14, 165, 233, 0.18)', border: '#0ea5e9' },  // C-Insight - Ciel
+        3: { glowColor: 'rgba(16, 185, 129, 0.18)', border: '#10b981' },  // C-Quality - Émeraude
+        4: { glowColor: 'rgba(6, 182, 212, 0.18)', border: '#06b6d4' },   // C-Capture - Cyan
+        5: { glowColor: 'rgba(99, 102, 241, 0.18)', border: '#6366f1' },  // C-Protect - Indigo
+        6: { glowColor: 'rgba(168, 85, 247, 0.18)', border: '#a855f7' }   // C-Visio - Violet
     };
 
     // --- GESTION DU CARROUSEL DE LA SECTION MODULES ---
@@ -1127,98 +1092,31 @@
             glow.style.boxShadow = `0 0 160px ${theme.glowColor}`;
         }
 
-        // Application dynamique de l'opacité, du flou directionnel, de la hauteur de carte et de la couleur d'arrière-plan (Sombre vs Clair)
+        // Application dynamique de l'opacité, du flou directionnel et de la lueur de carte
         for (let i = 0; i < cards.length; i++) {
             const card = cards[i];
             const dot = document.getElementById(`module-dot-${i}`);
             const cardTheme = moduleThemes[i];
             
-            // Récupération des éléments internes de la carte
-            const logoImg = card.querySelector('.logo-img');
-            const badge = card.querySelector('.badge');
-            const subtitle = card.querySelector('.subtitle');
-            const description = card.querySelector('.description');
-            const benefitBox = card.querySelector('.benefit-box');
-            const iconSpan = card.querySelector('.icon-span');
-            const benefitTag = card.querySelector('.benefit-tag');
-            const benefitDesc = card.querySelector('.benefit-desc');
-
             if (i === activeModuleIndex) {
-                // CARTE ACTIVE : Arrière-plan SOMBRE, netteté absolue, zoom subtil, bordures néon
-                card.classList.remove('opacity-25', 'blur-[3px]', 'scale-90', 'bg-white');
-                card.classList.add('opacity-100', 'blur-none', 'scale-100', 'z-20', 'bg-[#0b132a]', 'text-white', 'border-transparent');
-                card.style.borderColor = 'transparent';
-                card.style.boxShadow = `0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 12px 40px ${cardTheme.glowColor}`;
+                // Carte active : netteté absolue, mise en valeur, bordure nette et lueur assortie
+                card.classList.remove('opacity-25', 'blur-[3px]', 'scale-90');
+                card.classList.add('opacity-100', 'blur-none', 'scale-100', 'z-20');
+                card.style.borderColor = cardTheme.border;
+                card.style.boxShadow = `0 20px 48px rgba(15, 23, 42, 0.08), 0 8px 30px ${cardTheme.glowColor}`;
                 
-                // Inverser la luminosité du logo pour un contraste parfait en mode sombre
-                if (logoImg) logoImg.classList.add('brightness-0', 'invert');
-                
-                // Adapter les couleurs des polices internes au mode sombre
-                if (badge) {
-                    badge.className = "badge text-[9px] font-mono font-bold tracking-wider uppercase px-3 py-1 rounded-full border transition-all duration-300 text-white bg-white/10 border-white/20";
-                }
-                if (subtitle) {
-                    subtitle.className = "subtitle text-xs font-bold block font-mono uppercase tracking-wider transition-all duration-300 text-slate-400";
-                }
-                if (description) {
-                    description.className = "description text-xs sm:text-[13px] font-light leading-relaxed pt-1 transition-all duration-300 text-slate-300";
-                }
-                if (benefitBox) {
-                    // Resserré et centré verticalement via flex items-center
-                    benefitBox.className = "benefit-box mt-4 pt-4 border-t flex items-center gap-4 transition-all duration-300 border-white/10";
-                }
-                if (iconSpan) {
-                    iconSpan.style.backgroundColor = cardTheme.border;
-                    iconSpan.style.color = '#ffffff';
-                    iconSpan.style.boxShadow = `0 8px 24px ${cardTheme.glowColor}`;
-                }
-                if (benefitTag) {
-                    benefitTag.style.color = cardTheme.border;
-                }
-                if (benefitDesc) {
-                    benefitDesc.className = "benefit-desc transition-all duration-300 text-slate-200";
-                }
-
                 if (dot) {
                     dot.classList.remove('bg-slate-200');
                     dot.classList.add('bg-themeAccent', 'w-6');
                     dot.style.backgroundColor = cardTheme.border;
                 }
             } else {
-                // CARTES ADJACENTES : Arrière-plan CLAIR, flouté, opacité réduite, échelle rétractée
-                card.classList.remove('opacity-100', 'blur-none', 'scale-100', 'z-20', 'bg-[#0b132a]', 'text-white', 'border-transparent');
-                card.classList.add('opacity-25', 'blur-[3px]', 'scale-90', 'z-10', 'bg-white', 'border-slate-150');
+                // Cartes adjacentes : floutées, opacité réduite, échelle rétractée
+                card.classList.remove('opacity-100', 'blur-none', 'scale-100', 'z-20');
+                card.classList.add('opacity-25', 'blur-[3px]', 'scale-90', 'z-10');
                 card.style.borderColor = 'rgba(226, 232, 240, 0.8)';
                 card.style.boxShadow = 'none';
                 
-                // Rétablir l'affichage original du logo
-                if (logoImg) logoImg.classList.remove('brightness-0', 'invert');
-                
-                // Restaurer les couleurs claires originales
-                if (badge) {
-                    badge.className = "badge text-[9px] font-mono font-bold tracking-wider uppercase px-3 py-1 rounded-full border transition-all duration-300 text-slate-500 bg-slate-100 border-slate-200";
-                }
-                if (subtitle) {
-                    subtitle.className = "subtitle text-xs font-bold block font-mono uppercase tracking-wider transition-all duration-300 text-slate-400";
-                }
-                if (description) {
-                    description.className = "description text-xs sm:text-[13px] font-light leading-relaxed pt-1 transition-all duration-300 text-slate-500";
-                }
-                if (benefitBox) {
-                    benefitBox.className = "benefit-box mt-4 pt-4 border-t flex items-center gap-4 transition-all duration-300 border-slate-100";
-                }
-                if (iconSpan) {
-                    iconSpan.style.backgroundColor = '#f1f5f9';
-                    iconSpan.style.color = '#94a3b8';
-                    iconSpan.style.boxShadow = 'none';
-                }
-                if (benefitTag) {
-                    benefitTag.style.color = '#64748b';
-                }
-                if (benefitDesc) {
-                    benefitDesc.className = "benefit-desc transition-all duration-300 text-slate-600";
-                }
-
                 if (dot) {
                     dot.classList.remove('bg-themeAccent', 'w-6');
                     dot.classList.add('bg-slate-200');
@@ -1228,6 +1126,7 @@
         }
     };
 
+    // --- CARROUSEL AUTO-ROTATIF DU MODULES SECTION (PAUSE SUR HOVER) ---
     const startModulesAutoScroll = () => {
         stopModulesAutoScroll();
         modulesAutoInterval = setInterval(() => {
@@ -1244,11 +1143,13 @@
 
     const resetModulesAutoScroll = () => {
         const modulesSection = document.getElementById('modules');
+        // Redémarre l'auto-scroll seulement si la souris n'est pas en train de survoler la section
         if (modulesSection && !modulesSection.matches(':hover')) {
             startModulesAutoScroll();
         }
     };
 
+    // --- GESTION DU SWIPE / DRAG SUR ORDINATEUR ET TACTILE ---
     const initSwipeGestures = () => {
         const viewport = document.getElementById('modules-viewport');
         let startX = 0;
@@ -1271,7 +1172,7 @@
                 } else {
                     window.setModuleIndex(activeModuleIndex - 1);
                 }
-                isDragging = false;
+                isDragging = false; // Bloque les déclenchements répétitifs
             }
         };
 
@@ -1284,11 +1185,13 @@
         viewport.addEventListener('touchend', () => { isDragging = false; });
     };
 
+    // --- GESTION DES TOUCHES FLÈCHES DU CLAVIER ---
     const initKeyboardNavigation = () => {
         const targetSection = document.getElementById('modules');
         window.addEventListener('keydown', (e) => {
             if (!targetSection) return;
             const rect = targetSection.getBoundingClientRect();
+            // N'active les touches de direction que si la section Modules est visible à l'écran
             if (rect.top < window.innerHeight && rect.bottom > 0) {
                 if (e.key === 'ArrowLeft') {
                     window.setModuleIndex(activeModuleIndex - 1);
@@ -1338,7 +1241,9 @@
         }, 4500);
     };
 
+    // Initialisation globale au chargement du DOM
     document.addEventListener("DOMContentLoaded", () => {
+        // Centrage du premier module du carrousel
         setTimeout(() => {
             window.setModuleIndex(0);
         }, 150);
@@ -1348,6 +1253,7 @@
         initSwipeGestures();
         initKeyboardNavigation();
 
+        // Pause de l'auto-rotation de la section modules si la souris survole
         const modulesSection = document.getElementById('modules');
         if (modulesSection) {
             modulesSection.addEventListener('mouseenter', stopModulesAutoScroll);
@@ -1360,17 +1266,7 @@
             });
         });
 
-        document.querySelectorAll('.sidebar-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSec = document.querySelector(targetId);
-                if (targetSec) {
-                    targetSec.scrollIntoView({behavior:'smooth'});
-                }
-            });
-        });
-
+        // Recalcul de l'alignement sur redimensionnement de l'écran
         window.addEventListener('resize', () => {
             updateModulesCarousel();
         }, { passive: true });
@@ -1401,14 +1297,6 @@
                     if (rect.top <= window.innerHeight / 2) {
                         activeSec = id;
                     }
-                }
-            });
-
-            document.querySelectorAll('.sidebar-link').forEach(link => {
-                if (link.getAttribute('data-section') === activeSec) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
                 }
             });
 
