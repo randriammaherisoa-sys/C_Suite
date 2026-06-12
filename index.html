@@ -233,6 +233,8 @@
 
                     <p class="text-xs sm:text-sm md:text-base text-slate-600 font-light leading-relaxed max-w-xl">
                         C-Suite est une suite logicielle de comete.ai conçue pour les centres de contact nouvelle génération. La plateforme équipe chaque conseiller, superviseur, coach et manager avec l'IA opérationnelle dont ils ont besoin — en temps réel, sur chaque interaction.
+                        <br><br>
+                        De l'assistance temps réel à l'analyse post-appel, C-Suite couvre tout le cycle de la performance relation client pour que chaque interaction soit plus rapide, plus conforme et plus utile que la précédente.
                     </p>
 
                     <!-- Avantages Clés en Pills Sombres & Corporates (Snugged) -->
@@ -384,7 +386,7 @@
                                 <div id="hero-slide-ccapture" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 bg-white flex flex-col justify-between p-4 sm:p-5 text-left text-slate-900 font-sans">
                                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
                                     <div class="flex justify-between items-center border-b border-slate-100 pb-2">
-                                        <span class="font-mono text-[9px] sm:text-xs text-[#2470ef] tracking-widest uppercase">Analyse documentaire</span>
+                                        <span class="font-mono text-[9px] sm:text-xs text-[#2470ef] tracking-widest uppercase font-sans">Analyse documentaire</span>
                                         <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/df852063-2003-471c-8f9d-f6f5165f716c.png" class="h-6 object-contain" alt="C-Capture" />
                                     </div>
                                     <div class="space-y-3 my-auto">
@@ -409,7 +411,7 @@
                         
                         <div class="laptop-base w-[104%] -left-[2%]"></div>
                         
-                        <div class="flex justify-center gap-2 mt-4">
+                        <div class="flex justify-center gap-2">
                             <button onclick="window.setHeroSlide('smartpush')" id="hero-dot-smartpush" class="hero-dot w-2 h-2 rounded-full bg-themeAccent transition-all duration-300"></button>
                             <button onclick="window.setHeroSlide('speechcontrol')" id="hero-dot-speechcontrol" class="hero-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
                             <button onclick="window.setHeroSlide('cquality')" id="hero-dot-cquality" class="hero-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
@@ -422,7 +424,7 @@
         </div>
     </section>
 
-    <!-- 2. SECTION 1 : LES ENJEUX -->
+    <!-- 2. SECTION 1 : LES ENJEUX (REDESIGNÉ AVEC LE PORTRAIT CONSEILLER GAUCHE - image_a439bf.jpg) -->
     <section id="enjeux" class="py-12 md:py-16 bg-[#f8fafc] text-left overflow-hidden relative border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative">
             <div class="text-center max-w-4xl mx-auto mb-10">
@@ -435,55 +437,80 @@
                 </p>
             </div>
 
-            <!-- Grille d'enjeux re-stylisée avec de magnifiques effets et espacement resserré -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            <!-- Nouvelle structure : 12 colonnes. Image à gauche (lg:col-span-4) et Grille d'enjeux à droite (lg:col-span-8) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
                 
-                <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[220px] group transition-all duration-300 hover:shadow-md hover:border-themeAccent/30">
-                    <span class="w-10 h-10 rounded-xl bg-blue-50 text-themeAccent flex items-center justify-center mb-3 transition-transform group-hover:scale-110"><i data-lucide="user-check" class="w-5 h-5"></i></span>
-                    <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-1.5">Accompagner les conseillers en temps réel</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed font-light">Pousser l'information exacte au moment précis de l'interaction pour éliminer le temps de recherche documentaire ou de procédure.</p>
-                    </div>
+                <!-- Bloc de gauche contenant le portrait haute définition transparent de la conseillère comete.ai -->
+                <!-- Référencé dans image_a439bf.jpg : pas de carte sombre, posée directement de façon limpide -->
+                <div class="lg:col-span-4 flex justify-center items-end relative min-h-[350px]">
+                    <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/d8caa2b7-69dd-4e0d-9156-804fcafbaac8.png" 
+                         class="max-h-[440px] w-auto object-contain z-10 drop-shadow-[0_20px_40px_rgba(15,23,42,0.1)] transition-transform duration-500 hover:scale-[1.02]" 
+                         alt="Conseillère comete.ai C-Suite" />
                 </div>
 
-                <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[220px] group transition-all duration-300 hover:shadow-md hover:border-indigo-500/30">
-                    <span class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110"><i data-lucide="lock" class="w-5 h-5"></i></span>
-                    <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-1.5">Sécuriser les échanges sensibles</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed font-light">Collecter de façon hautement sécurisée les documents, données bancaires et consentements réglementaires sans friction pour l'utilisateur.</p>
+                <!-- Grille d'enjeux à droite, optimisée en hauteur -->
+                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between group transition-all duration-300 hover:shadow-md hover:border-themeAccent/30">
+                        <span class="w-10 h-10 rounded-xl bg-blue-50 text-themeAccent flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
+                            <i data-lucide="user-check" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-sm mb-1">Accompagner les conseillers en temps réel</h3>
+                            <p class="text-slate-500 text-[11px] leading-relaxed font-light">Pousser l'information exacte au moment précis de l'interaction pour éliminer le temps de recherche documentaire ou de procédure.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[220px] group transition-all duration-300 hover:shadow-md hover:border-cyan-500/30">
-                    <span class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110"><i data-lucide="check-circle" class="w-5 h-5"></i></span>
-                    <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-1.5">Industrialiser le contrôle qualité</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed font-light">Évaluer automatiquement 100 % des appels au lieu de se contenter d’échantillons manuels marginaux, subjectifs et lents.</p>
+                    <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between group transition-all duration-300 hover:shadow-md hover:border-indigo-500/30">
+                        <span class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
+                            <i data-lucide="lock" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-sm mb-1">Sécuriser les échanges sensibles</h3>
+                            <p class="text-slate-500 text-[11px] leading-relaxed font-light">Collecter de façon hautement sécurisée les documents, données bancaires et consentements réglementaires sans friction pour l'utilisateur.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[220px] group transition-all duration-300 hover:shadow-md hover:border-teal-500/30">
-                    <span class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110"><i data-lucide="database" class="w-5 h-5"></i></span>
-                    <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-1.5">Valoriser les conversations</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed font-light">Extraire automatiquement les motifs récurrents, sentiments et signaux faibles de chaque appel ou échange pour alimenter vos analyses.</p>
+                    <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between group transition-all duration-300 hover:shadow-md hover:border-cyan-500/30">
+                        <span class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
+                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-sm mb-1">Industrialiser le contrôle qualité</h3>
+                            <p class="text-slate-500 text-[11px] leading-relaxed font-light">Évaluer automatiquement 100 % des appels au lieu de se contenter d’échantillons manuels marginaux, subjectifs et lents.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[220px] group transition-all duration-300 hover:shadow-md hover:border-emerald-500/30">
-                    <span class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110"><i data-lucide="zap" class="w-5 h-5"></i></span>
-                    <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-1.5">Accélérer le traitement des demandes</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed font-light">Automatiser le traitement documentaire et l’analyse OCR des justificatifs pour accélérer la contractualisation de vos dossiers.</p>
+                    <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between group transition-all duration-300 hover:shadow-md hover:border-teal-500/30">
+                        <span class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
+                            <i data-lucide="database" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-sm mb-1">Valoriser les conversations</h3>
+                            <p class="text-slate-500 text-[11px] leading-relaxed font-light">Extraire automatiquement les motifs récurrents, sentiments et signaux faibles de chaque appel ou échange pour alimenter vos analyses.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between min-h-[220px] group transition-all duration-300 hover:shadow-md hover:border-purple-500/30">
-                    <span class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110"><i data-lucide="bar-chart-3" class="w-5 h-5"></i></span>
-                    <div>
-                        <h3 class="font-extrabold text-slate-800 text-base mb-1.5">Faciliter les choix opérationnels</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed font-light">Permettre aux directeurs de centres d'agir instantanément grâce à des tableaux de bord analytiques automatisés et exploitables.</p>
+                    <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between group transition-all duration-300 hover:shadow-md hover:border-emerald-500/30">
+                        <span class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
+                            <i data-lucide="zap" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-sm mb-1">Accélérer le traitement des demandes</h3>
+                            <p class="text-slate-500 text-[11px] leading-relaxed font-light">Automatiser le traitement documentaire et l’analyse OCR des justificatifs pour accélérer la contractualisation de vos dossiers.</p>
+                        </div>
                     </div>
+
+                    <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex flex-col justify-between group transition-all duration-300 hover:shadow-md hover:border-purple-500/30">
+                        <span class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
+                            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-sm mb-1">Faciliter les choix opérationnels</h3>
+                            <p class="text-slate-500 text-[11px] leading-relaxed font-light">Permettre aux directeurs de centres d'agir instantanément grâce à des tableaux de bord analytiques automatisés et exploitables.</p>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -503,11 +530,11 @@
         </div>
     </section>
 
-    <!-- 3. CONSTELLATION ORBITALE DES MODULES EN CARROUSEL AVEC LOGOS BLANCS ET SANS EFFET CARREAU -->
-    <section id="modules" class="py-16 md:py-28 overflow-hidden text-left relative w-full border-t border-slate-200/80 bg-white transition-all duration-1000">
-        <!-- Image d'arrière-plan technologique fluide représentant des ampoules, IA et réseaux connectés (sans effet carreau) -->
+    <!-- 3. CONSTELLATION ORBITALE DES MODULES EN CARROUSEL AVEC LOGOS BLANCS ET SOLUTION IA / AMPOULE (image_a4a29e.jpg) -->
+    <section id="modules" class="py-16 md:py-28 overflow-hidden text-left relative w-full border-t border-slate-200/80 bg-white transition-all duration-1000 font-sans">
+        <!-- Image d'arrière-plan technologique fluide représentant des ampoules, IA et réseaux connectés (sans effet de carreau) -->
         <div class="absolute inset-0 z-0 pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover opacity-20 object-center mix-blend-luminosity" alt="Arrière-plan technique comete.ai" />
+            <img src="intercallaires (17).jpg" class="w-full h-full object-cover opacity-20 object-center mix-blend-luminosity" alt="Arrière-plan technique comete.ai" />
         </div>
         
         <!-- Halo de Glow Ambiant Dynamique - Couleur de fond changeant en JS -->
@@ -522,10 +549,10 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
                 </div>
                 <span class="px-3.5 py-1 bg-blue-50 text-themeAccent rounded-full text-xs font-semibold uppercase tracking-wider inline-block mb-3 border border-blue-100/50">C-SUITE ECOSYSTEM</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 tracking-tight leading-tight">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 tracking-tight leading-tight font-sans">
                     Des modules intégrés qui <span class="text-gradient-animated font-black">font la différence</span>
                 </h2>
-                <p class="text-slate-500 text-sm sm:text-base font-light mt-4 leading-relaxed">
+                <p class="text-slate-500 text-sm sm:text-base font-light mt-4 leading-relaxed font-sans">
                     Découvrez nos outils opérationnels. Cliquez sur n'importe quelle carte latérale floutée ou utilisez les boutons pour la recentrer et révéler ses détails exclusifs.
                 </p>
             </div>
@@ -550,7 +577,7 @@
                     <div id="modules-track" class="flex gap-8 transition-transform duration-500 ease-out" style="transform: translateX(0px);">
                         
                         <!-- Carte 1: SmartPush (Tous les logos blancs avec brightness-0 invert, badges centralisés) -->
-                        <div onclick="window.setModuleIndex(0)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
+                        <div onclick="window.setModuleIndex(0)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white font-sans">
                             <div class="space-y-4">
                                 <div class="flex flex-col items-center gap-3">
                                     <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/15">TEMPS RÉEL</span>
@@ -568,7 +595,7 @@
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-blue-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="zap" class="w-6 h-6"></i>
                                 </span>
-                                <span class="benefit-text text-xs leading-normal">
+                                <span class="benefit-text text-xs leading-normal text-left">
                                     <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5">Bénéfice clé</strong> 
                                     <span class="benefit-desc">Des réponses plus pertinentes, un temps moyen de traitement réduit, une montée en compétence accélérée.</span>
                                 </span>
@@ -576,7 +603,7 @@
                         </div>
 
                         <!-- Carte 2: SpeechControl -->
-                        <div onclick="window.setModuleIndex(1)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
+                        <div onclick="window.setModuleIndex(1)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white font-sans">
                             <div class="space-y-4">
                                 <div class="flex flex-col items-center gap-3">
                                     <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-red-400 bg-red-500/10 px-3 py-1 rounded-full border border-red-500/15">CONFORMITÉ</span>
@@ -593,7 +620,7 @@
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-red-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="shield" class="w-6 h-6"></i>
                                 </span>
-                                <span class="benefit-text text-xs leading-normal">
+                                <span class="benefit-text text-xs leading-normal text-left">
                                     <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5">Bénéfice clé</strong> 
                                     <span class="benefit-desc">Zéro appel non conforme, une protection réelle pour l'entreprise, un filet de sécurité pour les équipes.</span>
                                 </span>
@@ -601,7 +628,7 @@
                         </div>
 
                         <!-- Carte 3: C-Insight -->
-                        <div onclick="window.setModuleIndex(2)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
+                        <div onclick="window.setModuleIndex(2)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white font-sans">
                             <div class="space-y-4">
                                 <div class="flex flex-col items-center gap-3">
                                     <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/15">ANALYTICS</span>
@@ -615,18 +642,18 @@
                                 </div>
                             </div>
                             <div class="benefit-box mt-4 pt-4 border-t border-slate-800 flex items-center gap-4 transition-all duration-300">
-                                <span class="icon-span w-12 h-12 rounded-2xl bg-sky-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
+                                <span class="icon-span w-12 h-12 rounded-2xl bg-sky-50 text-[#0ea5e9] flex items-center justify-center shrink-0 shadow-lg transition-all duration-300 border border-[#0ea5e9]/20">
                                     <i data-lucide="brain" class="w-6 h-6"></i>
                                 </span>
-                                <span class="benefit-text text-xs leading-normal">
-                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5">Bénéfice clé</strong> 
+                                <span class="benefit-text text-xs leading-normal text-left">
+                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5 text-[#0ea5e9]">Bénéfice clé</strong> 
                                     <span class="benefit-desc">Une connaissance client enrichie en continu, des leviers d'optimisation de processus, pas de surcharge analytique.</span>
                                 </span>
                             </div>
                         </div>
 
                         <!-- Carte 4: C-Quality -->
-                        <div onclick="window.setModuleIndex(3)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
+                        <div onclick="window.setModuleIndex(3)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white font-sans">
                             <div class="space-y-4">
                                 <div class="flex flex-col items-center gap-3">
                                     <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/15">AUDIT QUALITÉ</span>
@@ -643,15 +670,15 @@
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="award" class="w-6 h-6"></i>
                                 </span>
-                                <span class="benefit-text text-xs leading-normal">
-                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5">Bénéfice clé</strong> 
+                                <span class="benefit-text text-xs leading-normal text-left">
+                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5 text-emerald-400">Bénéfice clé</strong> 
                                     <span class="benefit-desc">Un pilotage qualité exhaustif, une évaluation objective, plus de temps pour le coaching à valeur ajoutée pour le superviseur.</span>
                                 </span>
                             </div>
                         </div>
 
                         <!-- Carte 5: C-Capture -->
-                        <div onclick="window.setModuleIndex(4)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
+                        <div onclick="window.setModuleIndex(4)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white font-sans">
                             <div class="space-y-4">
                                 <div class="flex flex-col items-center gap-3">
                                     <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/15">OCR / SAISIE</span>
@@ -668,15 +695,15 @@
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-cyan-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="scan" class="w-6 h-6"></i>
                                 </span>
-                                <span class="benefit-text text-xs leading-normal">
-                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5">Bénéfice clé</strong> 
+                                <span class="benefit-text text-xs leading-normal text-left">
+                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5 text-cyan-400">Bénéfice clé</strong> 
                                     <span class="benefit-desc">Un traitement des dossiers plus rapide, moins d'erreurs de saisie, une expérience client plus fluide.</span>
                                 </span>
                             </div>
                         </div>
 
                         <!-- Carte 6: C-Protect -->
-                        <div onclick="window.setModuleIndex(5)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
+                        <div onclick="window.setModuleIndex(5)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white font-sans">
                             <div class="space-y-4">
                                 <div class="flex flex-col items-center gap-3">
                                     <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/15">SÉCURITÉ PCI</span>
@@ -693,15 +720,15 @@
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-indigo-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="lock" class="w-6 h-6"></i>
                                 </span>
-                                <span class="benefit-text text-xs leading-normal">
-                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5">Bénéfice clé</strong> 
+                                <span class="benefit-text text-xs leading-normal text-left">
+                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5 text-indigo-400">Bénéfice clé</strong> 
                                     <span class="benefit-desc">Une sécurité bancaire garantie, sans friction pour le client, sans risque pour l'entreprise.</span>
                                 </span>
                             </div>
                         </div>
 
                         <!-- Carte 7: C-Visio -->
-                        <div onclick="window.setModuleIndex(6)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white">
+                        <div onclick="window.setModuleIndex(6)" class="carousel-card w-[270px] sm:w-[310px] md:w-[350px] min-h-[500px] shrink-0 bg-[#0b132a] border border-slate-800 p-6 sm:p-8 rounded-[32px] flex flex-col justify-between transition-all duration-500 cursor-pointer origin-center shadow-sm select-none text-white font-sans">
                             <div class="space-y-4">
                                 <div class="flex flex-col items-center gap-3">
                                     <span class="badge text-[9px] font-mono font-bold tracking-wider uppercase text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/15">SUPPORT VIDÉO</span>
@@ -718,8 +745,8 @@
                                 <span class="icon-span w-12 h-12 rounded-2xl bg-purple-500 text-white flex items-center justify-center shrink-0 shadow-lg transition-all duration-300">
                                     <i data-lucide="video" class="w-6 h-6"></i>
                                 </span>
-                                <span class="benefit-text text-xs leading-normal">
-                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5">Bénéfice clé</strong> 
+                                <span class="benefit-text text-xs leading-normal text-left">
+                                    <strong class="benefit-tag uppercase text-[9px] font-black tracking-wider block mb-0.5 text-purple-400">Bénéfice clé</strong> 
                                     <span class="benefit-desc">Une résolution au premier contact, sans déplacement, un gain de temps précieux.</span>
                                 </span>
                             </div>
@@ -770,19 +797,19 @@
                     </div>
                     <h3 class="font-extrabold text-slate-900 text-xl mb-6 tracking-tight">Des conseillers plus performants</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Réduction drastique du temps de recherche d'information en ligne</span>
                         </li>
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Montée en compétence initiale et continue accélérée</span>
                         </li>
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Réponses plus homogènes et conformes aux chartes de la marque</span>
                         </li>
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Meilleure gestion immédiate des situations conflictuelles</span>
                         </li>
@@ -797,19 +824,19 @@
                     </div>
                     <h3 class="font-extrabold text-slate-900 text-xl mb-6 tracking-tight">Une expérience client renforcée</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Réduction massive de l'effort client sur tous les canaux</span>
                         </li>
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Diminution visible des temps moyens de traitement (TMT)</span>
                         </li>
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Amélioration du taux de résolution dès le premier contact (FCR)</span>
                         </li>
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="text-emerald-600 flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/20 shrink-0 mt-0.5"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Parcours plus fluides, cohérents et transparents</span>
                         </li>
@@ -824,19 +851,19 @@
                     </div>
                     <h3 class="font-extrabold text-slate-900 text-xl mb-6 tracking-tight">Une qualité maîtrisée</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Analyse automatisée de 100 % des interactions, sans omission</span>
                         </li>
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Détection instantanée et alertes ciblées sur les écarts de script</span>
                         </li>
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Pilotage complet de l'assurance qualité en continu (QA)</span>
                         </li>
-                        <li class="flex items-start gap-3.5 text-[13px] text-slate-600 font-light leading-relaxed">
+                        <li class="flex items-start gap-3.5 text-xs text-slate-600 font-light leading-relaxed text-left">
                             <span class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
                             <span>Garantie de respect renforcé des normes réglementaires et RGPD</span>
                         </li>
@@ -932,7 +959,7 @@
                         <p class="text-slate-500 text-xs leading-relaxed font-light">
                             Nous concevons, développons et intégrons des solutions qui s'adaptent à votre environnement et à vos enjeux métier.
                             <br><br>
-                            Qu'il s'agisse d'IA, d'automatisation, de solutions conversationnelles, d'outils collaboratifs ou d'applications métiers, nous assurons l'ensemble de la chaîne de valeur : conception, développement, intégration and déploiement.
+                            Qu'il s'agisse d'IA, d'automatisation, de solutions conversationnelles, d'outils collaboratifs ou d'applications métiers, nous assurons l'ensemble de la chaîne de valeur : conception, développement, intégration et déploiement.
                             <br><br>
                             Notre approche garantit une intégration fluide avec vos systèmes existants et une adoption rapide par les utilisateurs.
                         </p>
@@ -971,7 +998,7 @@
                     <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-cyan-400/10 blur-3xl rounded-full"></div>
                 </div>
 
-                <div class="relative z-10 px-6 py-12 md:px-16 md:py-20 text-center text-white font-sans">
+                <div class="relative z-10 px-6 py-12 md:px-16 md:py-20 text-center text-white">
                     <div class="max-w-3xl mx-auto space-y-6 md:space-y-10">
                         <div class="relative mx-auto w-16 h-16 flex items-center justify-center rounded-2xl border border-white/10 bg-slate-900/60 shadow-lg">
                             <i data-lucide="zap" class="w-8 h-8 text-[#2470ef] fill-[#2470ef]/20 animate-pulse"></i>
@@ -1029,7 +1056,6 @@
         6: { glowColor: 'rgba(168, 85, 247, 0.18)', border: '#a855f7' }   // C-Visio - Violet
     };
 
-    // --- STREAMING_CHUNK: Setting up circular slide carousel indexes and event listeners... ---
     // --- GESTION DU CARROUSEL DE LA SECTION MODULES ---
     let activeModuleIndex = 0;
     const totalModules = 7;
@@ -1142,7 +1168,6 @@
         }
     };
 
-    // --- STREAMING_CHUNK: Enabling automated scrolling loop... ---
     // --- CARROUSEL AUTO-ROTATIF DU MODULES SECTION (PAUSE SUR HOVER) ---
     const startModulesAutoScroll = () => {
         stopModulesAutoScroll();
@@ -1258,7 +1283,6 @@
         }, 4500);
     };
 
-    // --- STREAMING_CHUNK: Initializing window event listener handlers... ---
     // Initialisation globale au chargement du DOM
     document.addEventListener("DOMContentLoaded", () => {
         // Centrage du premier module du carrousel
@@ -1281,6 +1305,17 @@
         document.querySelectorAll('.hero-dot').forEach(dot => {
             dot.addEventListener('click', () => {
                 if (heroRotationInterval) clearInterval(heroRotationInterval);
+            });
+        });
+
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSec = document.querySelector(targetId);
+                if (targetSec) {
+                    targetSec.scrollIntoView({behavior:'smooth'});
+                }
             });
         });
 
@@ -1315,6 +1350,14 @@
                     if (rect.top <= window.innerHeight / 2) {
                         activeSec = id;
                     }
+                }
+            });
+
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                if (link.getAttribute('data-section') === activeSec) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
                 }
             });
 
