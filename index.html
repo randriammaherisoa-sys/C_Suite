@@ -37,12 +37,20 @@
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
+                        'float-slow': 'floatSlow 8s ease-in-out infinite',
+                        'float-delay-1': 'floatDelay1 7s ease-in-out infinite',
+                        'float-delay-2': 'floatDelay2 9s ease-in-out infinite',
+                        'float-delay-3': 'floatDelay3 7.5s ease-in-out infinite',
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'fade-in': 'fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                         'scan-vertical': 'scanVertical 2s linear infinite'
                     },
                     keyframes: {
                         float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+                        floatSlow: { '0%, 100%': { transform: 'translateY(0) rotate(0deg)' }, '50%': { transform: 'translateY(-15px) rotate(1deg)' } },
+                        floatDelay1: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+                        floatDelay2: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-14px)' } },
+                        floatDelay3: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
                         fadeIn: { '0%': { opacity: '0', transform: 'translateY(15px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
                         scanVertical: { '0%': { top: '0%' }, '50%': { top: '100%' }, '100%': { top: '0%' } }
                     }
@@ -165,6 +173,17 @@
         }
         
         .lucide { width: 1em; height: 1em; }
+
+        /* Effets de lueur premium pour les cartes de valeur */
+        .premium-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+        }
+        .premium-card:hover {
+            transform: translateY(-5px);
+            background: #ffffff;
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 30px rgba(36, 112, 239, 0.05);
+        }
     </style>
 </head>
 <body class="min-h-screen bg-[#f8fafc] text-slate-800 overflow-x-hidden relative digital-noise text-left">
@@ -213,7 +232,7 @@
 <!-- CONTENU PRINCIPAL -->
 <div id="main-content" class="w-full overflow-hidden">
 
-    <!-- 1. HERO SECTION COMPRESSÉE POUR TENIR SUR UNE PAGE -->
+    <!-- 1. HERO SECTION AVEC BADGES HUD ORBITAUX ET FLOTTANTS -->
     <section id="hero" class="min-h-screen lg:h-screen lg:max-h-[850px] relative flex items-center overflow-hidden bg-white text-left pt-24 pb-12 lg:pt-28 lg:pb-16 border-b border-slate-100">
         <div class="absolute inset-0 z-0 pointer-events-none">
             <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/608b1699-7f06-47b2-bedd-9591922c33d6.png" class="absolute inset-0 w-full h-full object-cover opacity-20 object-center transition-opacity duration-500" alt="Arrière-plan comete.ai" />
@@ -239,36 +258,8 @@
                     <p class="text-xs sm:text-sm md:text-base text-slate-600 font-light leading-relaxed max-w-xl">
                         C-Suite est une suite logicielle de comete.ai conçue pour les centres de contact nouvelle génération. La plateforme équipe chaque conseiller, superviseur, coach et manager avec l'IA opérationnelle dont ils ont besoin — en temps réel, sur chaque interaction.
                         <br><br>
-                        De l'assistance temps réel à l'analyse post-appel, C-Suite covers tout le cycle de la performance relation client pour que chaque interaction soit plus rapide, plus conforme et plus utile que la précédente.
+                        De l'assistance temps réel à l'analyse post-appel, C-Suite couvre tout le cycle de la performance relation client pour que chaque interaction soit plus rapide, plus conforme et plus utile que la précédente.
                     </p>
-
-                    <!-- Avantages Clés en Pills Sombres & Corporates (Snugged) -->
-                    <div class="grid grid-cols-2 gap-3 max-w-lg pt-1">
-                        <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#0b132a] border border-white/10 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-themeAccent/50 hover:scale-[1.03] group">
-                            <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
-                                <i data-lucide="smile" class="w-3.5 h-3.5"></i>
-                            </span>
-                            <span class="text-[10px] sm:text-xs font-bold text-slate-200">+ Satisfaction client</span>
-                        </div>
-                        <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#0b132a] border border-white/10 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-themeAccent/50 hover:scale-[1.03] group">
-                            <span class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20">
-                                <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-                            </span>
-                            <span class="text-[10px] sm:text-xs font-bold text-slate-200">+ Productivité équipes</span>
-                        </div>
-                        <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#0b132a] border border-white/10 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-themeAccent/50 hover:scale-[1.03] group">
-                            <span class="w-7 h-7 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/20">
-                                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-                            </span>
-                            <span class="text-[10px] sm:text-xs font-bold text-slate-200">+ Qualité & conformité</span>
-                        </div>
-                        <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-[#0b132a] border border-white/10 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-themeAccent/50 hover:scale-[1.03] group">
-                            <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20">
-                                <i data-lucide="database" class="w-3.5 h-3.5"></i>
-                            </span>
-                            <span class="text-[10px] sm:text-xs font-bold text-slate-200">+ Exploitation données</span>
-                        </div>
-                    </div>
 
                     <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                         <button onclick="window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3JTz751iHQ5Rb5gntRTGFWkr2nO8ocaXYcBoHv6MOaaitFMWgY4O0kzJ5K-xBe6a_tF64_FSyQ', '_blank')" class="px-6 py-3.5 text-[11px] btn-unified flex items-center justify-center gap-2">
@@ -281,147 +272,186 @@
                     </div>
                 </div>
 
-                <!-- Colonne Droite: Laptop avec carrousel -->
-                <div class="lg:col-span-6 relative w-full select-none">
+                <!-- Colonne Droite: Laptop avec widgets orbitaux HUD flottants -->
+                <div class="lg:col-span-6 relative w-full select-none mt-8 lg:mt-0">
                     <div class="absolute inset-0 bg-themeAccent/10 blur-3xl rounded-full transform -translate-x-6 translate-y-6"></div>
-                    <div class="relative w-full max-w-[540px] mx-auto animate-float">
-                        <div class="laptop-bezel relative shadow-2xl overflow-hidden aspect-[16/10]">
-                            <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-800 rounded-full z-40 border border-slate-700 flex items-center justify-center">
-                                <span class="w-0.5 h-0.5 bg-blue-500 rounded-full opacity-60"></span>
+                    
+                    <!-- HUD Orbitaux (Positionnement absolu sur écran large, dockés sous l'appareil sur mobile) -->
+                    <div class="relative w-full max-w-[540px] mx-auto">
+                        
+                        <!-- Badge 1: Satisfaction (Haut-Gauche) -->
+                        <div class="lg:absolute lg:-left-20 lg:top-4 z-30 flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/95 border border-white/10 shadow-xl backdrop-blur-md transition-all duration-300 hover:border-emerald-500/50 hover:scale-105 group lg:animate-float-slow mb-3 lg:mb-0">
+                            <span class="w-6 h-6 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
+                                <i data-lucide="smile" class="w-3 h-3"></i>
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-200 tracking-tight">+ Satisfaction client</span>
+                        </div>
+
+                        <!-- Badge 2: Productivité (Haut-Droite) -->
+                        <div class="lg:absolute lg:-right-20 lg:top-16 z-30 flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/95 border border-white/10 shadow-xl backdrop-blur-md transition-all duration-300 hover:border-blue-500/50 hover:scale-105 group lg:animate-float-delay-1 mb-3 lg:mb-0">
+                            <span class="w-6 h-6 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20">
+                                <i data-lucide="zap" class="w-3 h-3"></i>
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-200 tracking-tight">+ Productivité équipes</span>
+                        </div>
+
+                        <!-- Badge 3: Qualité (Bas-Gauche) -->
+                        <div class="lg:absolute lg:-left-24 lg:bottom-16 z-30 flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/95 border border-white/10 shadow-xl backdrop-blur-md transition-all duration-300 hover:border-indigo-500/50 hover:scale-105 group lg:animate-float-delay-2 mb-3 lg:mb-0">
+                            <span class="w-6 h-6 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/20">
+                                <i data-lucide="shield-check" class="w-3 h-3"></i>
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-200 tracking-tight">+ Qualité & conformité</span>
+                        </div>
+
+                        <!-- Badge 4: Données (Bas-Droite) -->
+                        <div class="lg:absolute lg:-right-16 lg:bottom-8 z-30 flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/95 border border-white/10 shadow-xl backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 hover:scale-105 group lg:animate-float-delay-3 mb-3 lg:mb-0">
+                            <span class="w-6 h-6 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                <i data-lucide="database" class="w-3 h-3"></i>
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-200 tracking-tight">+ Exploitation données</span>
+                        </div>
+
+                        <!-- Écran d'ordinateur principal -->
+                        <div class="relative w-full z-20 animate-float">
+                            <div class="laptop-bezel relative shadow-2xl overflow-hidden aspect-[16/10]">
+                                <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-800 rounded-full z-40 border border-slate-700 flex items-center justify-center">
+                                    <span class="w-0.5 h-0.5 bg-blue-500 rounded-full opacity-60"></span>
+                                </div>
+                                
+                                <div class="relative w-full h-full bg-[#0f172a] text-slate-900 overflow-hidden">
+                                    
+                                    <!-- Slide 1: SmartPush -->
+                                    <div id="hero-slide-smartpush" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10 bg-white flex flex-col justify-between p-4 sm:p-5 text-left">
+                                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-themeAccent via-themeAccent to-cyan-400"></div>
+                                        <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                                            <div class="flex items-center gap-2">
+                                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                                <span class="font-mono text-[9px] sm:text-xs text-slate-500 uppercase tracking-widest">Appel Entrant actif</span>
+                                            </div>
+                                            <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/ce02a29a-07b9-49f7-b36c-036e4a6c380a.png" class="h-6 object-contain" alt="SmartPush" />
+                                        </div>
+                                        <div class="space-y-3 my-auto">
+                                            <div class="flex items-start gap-2">
+                                                <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-[8px] font-extrabold rounded">CLIENT</span>
+                                                <p class="text-slate-600 leading-relaxed font-light text-[10px] sm:text-[11.5px]">"Je voulais savoir si la résiliation du contrat engendre des frais et si vous avez besoin d'un justificatif ?"</p>
+                                            </div>
+                                            
+                                            <div class="bg-blue-50 border border-blue-200/85 rounded-xl p-3 space-y-1.5 relative overflow-hidden">
+                                                <div class="absolute top-1.5 right-1.5 p-1 text-blue-300">
+                                                    <i data-lucide="zap" class="w-3.5 h-3.5 fill-blue-100"></i>
+                                                </div>
+                                                <div class="flex items-center gap-1.5">
+                                                    <span class="text-[8px] bg-themeAccent text-white px-1.5 py-0.5 font-bold uppercase rounded font-mono">SmartPush</span>
+                                                    <span class="text-[8px] text-blue-600 font-extrabold">ASSISTANCE EN DIRECT</span>
+                                                </div>
+                                                <p class="text-slate-800 text-[9px] sm:text-[10.5px] leading-relaxed font-medium"><strong>Frais de résiliation :</strong> Contrat sans engagement. Aucun frais à appliquer. Confirmez la résiliation immédiate.</p>
+                                            </div>
+                                        </div>
+                                        <div class="border-t border-slate-100 pt-2 flex items-center justify-between text-[10px]">
+                                            <span class="text-slate-400 font-semibold uppercase tracking-wider font-mono">[SpeechControl]</span>
+                                            <div class="flex gap-2">
+                                                <span class="text-emerald-600 flex items-center gap-1 font-bold text-[8px] sm:text-[9px]">✓ RGPD</span>
+                                                <span class="text-emerald-600 flex items-center gap-1 font-bold text-[8px] sm:text-[9px]">✓ Identité</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 2: SpeechControl -->
+                                    <div id="hero-slide-speechcontrol" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 bg-white flex flex-col justify-between p-4 sm:p-5 text-left text-slate-900 font-sans">
+                                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-orange-400 to-yellow-300"></div>
+                                        <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                                            <div class="flex items-center gap-2">
+                                                <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+                                                <span class="font-mono text-[9px] sm:text-xs text-red-500 uppercase tracking-widest">Surveillance de Conformité</span>
+                                            </div>
+                                            <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/26e9f35b-9676-461e-bba6-85ae40d24007.png" class="h-6 object-contain" alt="SpeechControl" />
+                                        </div>
+                                        <div class="space-y-3 my-auto">
+                                            <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl space-y-2">
+                                                <div class="text-[9px] text-slate-400 font-mono uppercase tracking-wider">[Live Checklist]</div>
+                                                <div class="space-y-1">
+                                                    <div class="flex justify-between items-center text-[10px]">
+                                                        <span class="text-slate-700">1. Présentation de la marque</span>
+                                                        <span class="text-emerald-600 font-bold">✓ OK</span>
+                                                    </div>
+                                                    <div class="flex justify-between items-center text-[10px]">
+                                                        <span class="text-slate-700">2. Notification d'enregistrement d'appel</span>
+                                                        <span class="text-red-500 font-bold animate-pulse">⚠️ ATTENDU</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-[9px] font-mono text-slate-500">
+                                            <span>Flux audio conseiller</span>
+                                            <div class="flex items-end gap-1 h-4">
+                                                <span class="w-1 bg-red-400 voice-bar" style="animation-delay: 0.1s;"></span>
+                                                <span class="w-1 bg-red-400 voice-bar" style="animation-delay: 0.3s;"></span>
+                                                <span class="w-1 bg-red-400 voice-bar" style="animation-delay: 0.5s;"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3: C-Quality -->
+                                    <div id="hero-slide-cquality" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 bg-white flex flex-col justify-between p-4 sm:p-5 text-left text-slate-900 font-sans">
+                                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
+                                        <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                                            <span class="font-mono text-[9px] sm:text-xs text-emerald-600 tracking-widest uppercase">Évaluation post-appel</span>
+                                            <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/99f0c6e8-b352-4cf3-bea2-b97465d6346f.png" class="h-6 object-contain" alt="C-Quality" />
+                                        </div>
+                                        <div class="space-y-4 my-auto">
+                                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2">
+                                                <div class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                                    <div>
+                                                        <h4 class="text-[10px] font-bold text-slate-800">Rapport d'audit IA #8920</h4>
+                                                        <span class="text-[8px] text-slate-400 font-mono">Traité en 0.4s</span>
+                                                    </div>
+                                                    <span class="text-emerald-600 font-mono font-black text-xs sm:text-sm">96 / 100</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="border-t border-slate-100 pt-2 flex justify-between items-center text-[9px] text-slate-400 font-mono">
+                                            <span>Exhaustivité 100% des appels audités</span>
+                                            <span class="text-emerald-600 font-bold">✓ Objectif atteint</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 4: C-Capture -->
+                                    <div id="hero-slide-ccapture" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 bg-white flex flex-col justify-between p-4 sm:p-5 text-left text-slate-900 font-sans">
+                                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+                                        <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                                            <span class="font-mono text-[9px] sm:text-xs text-[#2470ef] tracking-widest uppercase font-sans">Analyse documentaire</span>
+                                            <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/df852063-2003-471c-8f9d-f6f5165f716c.png" class="h-6 object-contain" alt="C-Capture" />
+                                        </div>
+                                        <div class="space-y-3 my-auto">
+                                            <div class="border border-cyan-100 bg-cyan-50/50 rounded-xl p-3 flex items-center justify-between relative overflow-hidden">
+                                                <div class="absolute inset-x-0 h-0.5 bg-cyan-500 animate-scan-vertical"></div>
+                                                <div class="flex items-center gap-3 relative z-10">
+                                                    <i data-lucide="file-text" class="w-7 h-7 text-cyan-500 shrink-0"></i>
+                                                    <div>
+                                                        <div class="text-[9px] sm:text-[11px] font-bold text-slate-800 font-sans">PIECE_IDENTITE_DUPONT.JPG</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="border-t border-slate-100 pt-2 flex justify-between items-center text-[9px] text-slate-400 font-mono">
+                                            <span>Zéro ressaisie manuelle pour l'agent</span>
+                                            <span class="text-cyan-500 font-bold">Intégration CRM</span>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                             
-                            <div class="relative w-full h-full bg-[#0f172a] text-slate-900 overflow-hidden">
-                                
-                                <!-- Slide 1: SmartPush -->
-                                <div id="hero-slide-smartpush" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10 bg-white flex flex-col justify-between p-4 sm:p-5 text-left">
-                                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-themeAccent via-themeAccent to-cyan-400"></div>
-                                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                                            <span class="font-mono text-[9px] sm:text-xs text-slate-500 uppercase tracking-widest">Appel Entrant actif</span>
-                                        </div>
-                                        <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/ce02a29a-07b9-49f7-b36c-036e4a6c380a.png" class="h-6 object-contain" alt="SmartPush" />
-                                    </div>
-                                    <div class="space-y-3 my-auto">
-                                        <div class="flex items-start gap-2">
-                                            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-[8px] font-extrabold rounded">CLIENT</span>
-                                            <p class="text-slate-600 leading-relaxed font-light text-[10px] sm:text-[11.5px]">"Je voulais savoir si la résiliation du contrat engendre des frais et si vous avez besoin d'un justificatif ?"</p>
-                                        </div>
-                                        
-                                        <div class="bg-blue-50 border border-blue-200/85 rounded-xl p-3 space-y-1.5 relative overflow-hidden">
-                                            <div class="absolute top-1.5 right-1.5 p-1 text-blue-300">
-                                                <i data-lucide="zap" class="w-3.5 h-3.5 fill-blue-100"></i>
-                                            </div>
-                                            <div class="flex items-center gap-1.5">
-                                                <span class="text-[8px] bg-themeAccent text-white px-1.5 py-0.5 font-bold uppercase rounded font-mono">SmartPush</span>
-                                                <span class="text-[8px] text-blue-600 font-extrabold">ASSISTANCE EN DIRECT</span>
-                                            </div>
-                                            <p class="text-slate-800 text-[9px] sm:text-[10.5px] leading-relaxed font-medium"><strong>Frais de résiliation :</strong> Contrat sans engagement. Aucun frais à appliquer. Confirmez la résiliation immédiate.</p>
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-slate-100 pt-2 flex items-center justify-between text-[10px]">
-                                        <span class="text-slate-400 font-semibold uppercase tracking-wider font-mono">[SpeechControl]</span>
-                                        <div class="flex gap-2">
-                                            <span class="text-emerald-600 flex items-center gap-1 font-bold text-[8px] sm:text-[9px]">✓ RGPD</span>
-                                            <span class="text-emerald-600 flex items-center gap-1 font-bold text-[8px] sm:text-[9px]">✓ Identité</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 2: SpeechControl -->
-                                <div id="hero-slide-speechcontrol" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 bg-white flex flex-col justify-between p-4 sm:p-5 text-left text-slate-900 font-sans">
-                                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-orange-400 to-yellow-300"></div>
-                                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
-                                            <span class="font-mono text-[9px] sm:text-xs text-red-500 uppercase tracking-widest">Surveillance de Conformité</span>
-                                        </div>
-                                        <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/26e9f35b-9676-461e-bba6-85ae40d24007.png" class="h-6 object-contain" alt="SpeechControl" />
-                                    </div>
-                                    <div class="space-y-3 my-auto">
-                                        <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl space-y-2">
-                                            <div class="text-[9px] text-slate-400 font-mono uppercase tracking-wider">[Live Checklist]</div>
-                                            <div class="space-y-1">
-                                                <div class="flex justify-between items-center text-[10px]">
-                                                    <span class="text-slate-700">1. Présentation de la marque</span>
-                                                    <span class="text-emerald-600 font-bold">✓ OK</span>
-                                                </div>
-                                                <div class="flex justify-between items-center text-[10px]">
-                                                    <span class="text-slate-700">2. Notification d'enregistrement d'appel</span>
-                                                    <span class="text-red-500 font-bold animate-pulse">⚠️ ATTENDU</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-[9px] font-mono text-slate-500">
-                                        <span>Flux audio conseiller</span>
-                                        <div class="flex items-end gap-1 h-4">
-                                            <span class="w-1 bg-red-400 voice-bar" style="animation-delay: 0.1s;"></span>
-                                            <span class="w-1 bg-red-400 voice-bar" style="animation-delay: 0.3s;"></span>
-                                            <span class="w-1 bg-red-400 voice-bar" style="animation-delay: 0.5s;"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 3: C-Quality -->
-                                <div id="hero-slide-cquality" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 bg-white flex flex-col justify-between p-4 sm:p-5 text-left text-slate-900 font-sans">
-                                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
-                                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
-                                        <span class="font-mono text-[9px] sm:text-xs text-emerald-600 tracking-widest uppercase">Évaluation post-appel</span>
-                                        <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/99f0c6e8-b352-4cf3-bea2-b97465d6346f.png" class="h-6 object-contain" alt="C-Quality" />
-                                    </div>
-                                    <div class="space-y-4 my-auto">
-                                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2">
-                                            <div class="flex justify-between items-center border-b border-slate-200 pb-2">
-                                                <div>
-                                                    <h4 class="text-[10px] font-bold text-slate-800">Rapport d'audit IA #8920</h4>
-                                                    <span class="text-[8px] text-slate-400 font-mono">Traité en 0.4s</span>
-                                                </div>
-                                                <span class="text-emerald-600 font-mono font-black text-xs sm:text-sm">96 / 100</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-slate-100 pt-2 flex justify-between items-center text-[9px] text-slate-400 font-mono">
-                                        <span>Exhaustivité 100% des appels audités</span>
-                                        <span class="text-emerald-600 font-bold">✓ Objectif atteint</span>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 4: C-Capture -->
-                                <div id="hero-slide-ccapture" class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 bg-white flex flex-col justify-between p-4 sm:p-5 text-left text-slate-900 font-sans">
-                                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
-                                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
-                                        <span class="font-mono text-[9px] sm:text-xs text-[#2470ef] tracking-widest uppercase font-sans">Analyse documentaire</span>
-                                        <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/df852063-2003-471c-8f9d-f6f5165f716c.png" class="h-6 object-contain" alt="C-Capture" />
-                                    </div>
-                                    <div class="space-y-3 my-auto">
-                                        <div class="border border-cyan-100 bg-cyan-50/50 rounded-xl p-3 flex items-center justify-between relative overflow-hidden">
-                                            <div class="absolute inset-x-0 h-0.5 bg-cyan-500 animate-scan-vertical"></div>
-                                            <div class="flex items-center gap-3 relative z-10">
-                                                <i data-lucide="file-text" class="w-7 h-7 text-cyan-500 shrink-0"></i>
-                                                <div>
-                                                    <div class="text-[9px] sm:text-[11px] font-bold text-slate-800 font-sans">PIECE_IDENTITE_DUPONT.JPG</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-slate-100 pt-2 flex justify-between items-center text-[9px] text-slate-400 font-mono">
-                                        <span>Zéro ressaisie manuelle pour l'agent</span>
-                                        <span class="text-cyan-500 font-bold">Intégration CRM</span>
-                                    </div>
-                                </div>
-
+                            <div class="laptop-base w-[104%] -left-[2%]"></div>
+                            
+                            <div class="flex justify-center gap-2 mt-4">
+                                <button onclick="window.setHeroSlide('smartpush')" id="hero-dot-smartpush" class="hero-dot w-2 h-2 rounded-full bg-themeAccent transition-all duration-300"></button>
+                                <button onclick="window.setHeroSlide('speechcontrol')" id="hero-dot-speechcontrol" class="hero-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
+                                <button onclick="window.setHeroSlide('cquality')" id="hero-dot-cquality" class="hero-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
+                                <button onclick="window.setHeroSlide('ccapture')" id="hero-dot-ccapture" class="hero-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
                             </div>
                         </div>
-                        
-                        <div class="laptop-base w-[104%] -left-[2%]"></div>
-                        
-                        <div class="flex justify-center gap-2 mt-4">
-                            <button onclick="window.setHeroSlide('smartpush')" id="hero-dot-smartpush" class="hero-dot w-2 h-2 rounded-full bg-themeAccent transition-all duration-300"></button>
-                            <button onclick="window.setHeroSlide('speechcontrol')" id="hero-dot-speechcontrol" class="hero-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
-                            <button onclick="window.setHeroSlide('cquality')" id="hero-dot-cquality" class="hero-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
-                            <button onclick="window.setHeroSlide('ccapture')" id="hero-dot-ccapture" class="hero-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></button>
-                        </div>
+
                     </div>
                 </div>
 
@@ -492,7 +522,7 @@
         </div>
     </section>
 
-    <!-- 3. CONSTELLATION ORBITALE DES MODULES EN CARROUSEL COMPRESSÉ (Resserré) -->
+    <!-- 3. CONSTELLATION ORBITALE DES MODULES EN CARROUSEL COMPRESSÉ -->
     <section id="modules" class="py-12 md:py-16 overflow-hidden text-left relative w-full border-t border-slate-200/80 bg-white transition-all duration-1000">
         
         <!-- Image d'arrière-plan technologique fluide de l'utilisateur à Opacité 10% -->
@@ -731,86 +761,86 @@
         </div>
     </section>
 
-    <!-- 4. SECTION 3 : BÉNÉFICES MÉTIERS RESTRUCTURÉE AVEC DES IMAGES DE MANIÈRE NATURELLE -->
-    <section id="benefices" class="py-12 md:py-16 bg-[#f8fafc] text-left relative overflow-hidden border-t border-slate-100">
+    <!-- 4. SECTION 3 : BÉNÉFICES MÉTIERS (DESIGN PREMIUM & INTÉGRATION AVEC SEPARATEUR) -->
+    <section id="benefices" class="py-12 md:py-16 bg-gradient-to-b from-[#f8fafc] via-white to-[#f8fafc] text-left relative overflow-hidden border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
             
-            <div class="text-center max-w-4xl mx-auto mb-12">
+            <div class="text-center max-w-4xl mx-auto mb-16">
                 <span class="px-3.5 py-1 bg-blue-50 text-themeAccent rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-3 border border-blue-100/50">Des bénéfices concrets pour chaque métier</span>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 tracking-tight leading-tight">
                     Une plateforme conçue pour créer de la valeur <span class="text-gradient-animated font-black">à chaque interaction</span>
                 </h2>
-                <p class="text-slate-500 text-sm sm:text-base font-light max-w-3xl mx-auto mt-3 leading-relaxed">
+                <p class="text-slate-500 text-sm sm:text-base font-light max-w-3xl mx-auto mt-4 leading-relaxed">
                     Découvrez comment C-Suite transforme en profondeur les tâches de vos conseillers, sécurise vos opérations et structure une excellence durable à tous les niveaux.
                 </p>
             </div>
 
-            <!-- Double alignement asymétrique et fluide -->
+            <!-- Double alignement asymétrique fluide inspiré de image_936423.jpg et image_93d17b.jpg -->
             <div class="space-y-12 max-w-6xl mx-auto">
                 
-                <!-- PREMIER BLOC : IMAGE À GAUCHE, 3 BÉNÉFICES À DROITE -->
+                <!-- PREMIER BLOC : IMAGE À GAUCHE SANS ARRIÈRE-PLAN ET AGRANDIE AU MAX, 3 BÉNÉFICES À DROITE -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                     
-                    <!-- Colonne Image de gauche (Fond transparent, intégration naturelle) -->
+                    <!-- Colonne Image de gauche (Agrandie au maximum, sans fond, s'intègre naturellement) -->
                     <div class="lg:col-span-5 flex justify-center items-center">
-                        <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/0b9bc585-3b2d-4628-8aea-5f06d9e729f3.png" 
-                             class="max-h-[380px] w-auto object-contain drop-shadow-lg transition-transform hover:scale-[1.02]" 
+                        <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/9fb0e649-6895-4f9b-b857-94e35a6e660c.png" 
+                             class="h-[420px] lg:h-[500px] w-auto object-contain transition-transform hover:scale-[1.02] pointer-events-none" 
                              alt="C-Suite Performance & Qualité" />
                     </div>
                     
-                    <!-- Colonne 3 fiches compactes à droite -->
+                    <!-- Colonne 3 fiches corporate à droite (Style de l'image_93d17b.jpg réinterprété) -->
                     <div class="lg:col-span-7 space-y-4">
                         
                         <!-- Card 1 -->
-                        <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 text-themeAccent flex items-center justify-center shrink-0 border border-blue-100">
+                        <div class="premium-card border border-slate-200/60 p-5 rounded-[24px] flex items-start gap-4 group">
+                            <div class="w-11 h-11 rounded-full bg-blue-50 text-themeAccent flex items-center justify-center shrink-0 border border-blue-100/80 group-hover:bg-themeAccent group-hover:text-white transition-all duration-300">
                                 <i data-lucide="users" class="w-5 h-5"></i>
                             </div>
-                            <div class="space-y-1">
-                                <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">Des conseillers plus performants</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed font-light">
-                                    Les équipes disposent instantanément des informations et recommandations dont elles ont besoin pour répondre avec justesse et efficacité.
+                            <div class="space-y-1.5 flex-1">
+                                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base tracking-tight">Des conseillers plus performants</h3>
+                                <p class="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-light">
+                                    Les équipes disposent instantanément des informations et des recommandations dont elles ont besoin pour répondre avec justesse et efficacité.
                                 </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-medium">
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-themeAccent"></i> Gain de temps</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-themeAccent"></i> Réponses homogènes</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-themeAccent"></i> Montée en compétences</span>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1.5 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Gain de temps</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Réponses homogènes</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Montée en compétences</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center shrink-0 border border-cyan-100">
+                        <div class="premium-card border border-slate-200/60 p-5 rounded-[24px] flex items-start gap-4 group">
+                            <div class="w-11 h-11 rounded-full bg-cyan-50 text-cyan-600 flex items-center justify-center shrink-0 border border-cyan-100/80 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="smile" class="w-5 h-5"></i>
                             </div>
-                            <div class="space-y-1">
-                                <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">Une expérience client renforcée</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed font-light">
-                                    Chaque interaction devient plus fluide, plus rapide et personnalisée, réduisant les frictions et l'effort perçu par le client.
+                            <div class="space-y-1.5 flex-1">
+                                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base tracking-tight">Une expérience client renforcée</h3>
+                                <p class="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-light">
+                                    Chaque interaction devient plus fluide, plus rapide et plus personnalisée, réduisant les frictions et l'effort perçu par le client.
                                 </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-medium">
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-cyan-600"></i> Moins d'effort client</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-cyan-600"></i> Traitement rapide</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-cyan-600"></i> FCR augmenté</span>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1.5 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Moins d'effort client</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Traitement rapide</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> FCR augmenté</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 border border-indigo-100">
+                        <div class="premium-card border border-slate-200/60 p-5 rounded-[24px] flex items-start gap-4 group">
+                            <div class="w-11 h-11 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 border border-indigo-100/80 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="shield-check" class="w-5 h-5"></i>
                             </div>
-                            <div class="space-y-1">
-                                <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">Une qualité maîtrisée à grande échelle</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed font-light">
-                                    Les contrôles et audits ne reposent plus sur des échantillons restreints mais couvrent l'intégralité du flux d'appels.
+                            <div class="space-y-1.5 flex-1">
+                                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base tracking-tight">Une qualité maîtrisée à grande échelle</h3>
+                                <p class="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-light">
+                                    Les contrôles et les audits ne reposent plus uniquement sur des échantillons d'appels mais sur l'intégralité du flux d'appels.
                                 </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-medium">
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-indigo-600"></i> 100% des flux analysés</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-indigo-600"></i> Écarts signalés</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-indigo-600"></i> Conformité continue</span>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1.5 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> 100% des flux audités</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Écarts signalés</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Conformité continue</span>
                                 </div>
                             </div>
                         </div>
@@ -818,72 +848,81 @@
                     </div>
                 </div>
                 
-                <!-- DEUXIÈME BLOC : 3 BÉNÉFICES À GAUCHE, IMAGE À DROITE -->
+                <!-- SÉPARATEUR PREMIUM AVEC BADGE CENTRAL (Comme requis pour couper élégamment la grille) -->
+                <div class="relative py-12 flex items-center justify-center">
+                    <div class="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-slate-200/80 to-transparent"></div>
+                    <div class="relative z-10 px-6 py-1.5 bg-[#f8fafc] border border-slate-200/60 rounded-full shadow-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#2470ef] animate-pulse"></span>
+                        <span class="text-[9px] font-black uppercase tracking-[0.18em] text-slate-400 font-mono">CONTRÔLE & EXPLOITATION DOCUMENTAIRE</span>
+                    </div>
+                </div>
+
+                <!-- DEUXIÈME BLOC : 3 BÉNÉFICES À GAUCHE, IMAGE À DROITE SANS ARRIÈRE-PLAN ET AGRANDIE AU MAX -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                     
-                    <!-- Colonne 3 fiches compactes à gauche (Order 2 sur mobile pour garder une alternance logique) -->
+                    <!-- Colonne 3 fiches corporate à gauche (Order 2 sur mobile, style de l'image_936423.jpg réinterprété) -->
                     <div class="lg:col-span-7 space-y-4 order-2 lg:order-1">
                         
                         <!-- Card 4 -->
-                        <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 border border-teal-100">
+                        <div class="premium-card border border-slate-200/60 p-5 rounded-[24px] flex items-start gap-4 group">
+                            <div class="w-11 h-11 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 border border-teal-100/80 group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="database" class="w-5 h-5"></i>
                             </div>
-                            <div class="space-y-1">
-                                <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">Une exploitation intelligente des données</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed font-light">
-                                    Les conversations et documents sont convertis en données structurées exploitables pour optimiser l'offre et les processus de l'entreprise.
+                            <div class="space-y-1.5 flex-1">
+                                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base tracking-tight">Une exploitation intelligente des données</h3>
+                                <p class="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-light">
+                                    Les conversations, documents et interactions sont convertis en données structurées exploitables pour optimiser l'offre et les processus de l'entreprise.
                                 </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-medium">
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-teal-600"></i> Analyse thématique</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-teal-600"></i> Sentiments captés</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-teal-600"></i> Données CRM enrichies</span>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1.5 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Analyse thématique</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Sentiments captés</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Données CRM enrichies</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Card 5 -->
-                        <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100">
+                        <div class="premium-card border border-slate-200/60 p-5 rounded-[24px] flex items-start gap-4 group">
+                            <div class="w-11 h-11 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100/80 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="trending-up" class="w-5 h-5"></i>
                             </div>
-                            <div class="space-y-1">
-                                <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">Une efficacité opérationnelle accrue</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed font-light">
-                                    L'automatisation intelligente élimine les ressaisies manuelles pénibles pour libérer les collaborateurs au profit de la relation humaine.
+                            <div class="space-y-1.5 flex-1">
+                                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base tracking-tight">Une efficacité opérationnelle accrue</h3>
+                                <p class="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-light">
+                                    L'automatisation des tâches répétitives et l’analyse intelligente permettent de libérer les collaborateurs au profit de la relation humaine.
                                 </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-medium">
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Zéro ressaisie</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Saisie OCR auto</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Focus relation client</span>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1.5 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Zéro ressaisie</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Saisie OCR automatique</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Focus relation client</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Card 6 -->
-                        <div class="bg-white border border-slate-200/80 p-5 rounded-2xl shadow-sm glow-card flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 border border-purple-100">
+                        <div class="premium-card border border-slate-200/60 p-5 rounded-[24px] flex items-start gap-4 group">
+                            <div class="w-11 h-11 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 border border-purple-100/80 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="lock" class="w-5 h-5"></i>
                             </div>
-                            <div class="space-y-1">
-                                <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">Une relation client plus sûre</h3>
-                                <p class="text-slate-500 text-xs leading-relaxed font-light">
+                            <div class="space-y-1.5 flex-1">
+                                <h3 class="font-extrabold text-slate-900 text-sm sm:text-base tracking-tight">Une relation client plus sûre</h3>
+                                <p class="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-light">
                                     Les coordonnées bancaires et informations sensibles sont chiffrées et cloisonnées dès leur capture lors des sessions d'échanges.
                                 </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-medium">
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-purple-600"></i> Cloisonnement PCI-DSS</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-purple-600"></i> Sécurisation instantanée</span>
-                                    <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-purple-600"></i> Risques réduits</span>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1.5 pt-2 border-t border-slate-100 mt-2 text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Cloisonnement PCI-DSS</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Sécurisation instantanée</span>
+                                    <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Risques réduits</span>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                     
-                    <!-- Colonne Image de droite (Fond transparent, intégration naturelle, Order 1 sur mobile pour s'afficher d'abord) -->
+                    <!-- Colonne Image de droite (Agrandie au maximum, sans fond, s'intègre naturellement, Order 1 sur mobile) -->
                     <div class="lg:col-span-5 flex justify-center items-center order-1 lg:order-2">
-                        <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/36ef10b9-5b2e-4f45-bf7f-2b30e6fb2b74.png" 
-                             class="max-h-[380px] w-auto object-contain drop-shadow-lg transition-transform hover:scale-[1.02]" 
+                        <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/3dd696ac-8401-4462-952d-0891ccedc710.png" 
+                             class="h-[420px] lg:h-[500px] w-auto object-contain transition-transform hover:scale-[1.02] pointer-events-none" 
                              alt="C-Suite Data Insights & Analytics" />
                     </div>
                     
@@ -1142,7 +1181,7 @@
             let distance = Math.abs(i - activeModuleIndex);
             if (distance > totalModules / 2) distance = totalModules - distance;
 
-            // Restauration exacte des classes blur et opacity
+            // Restauration exacte des classes de floutage et d'opacité
             if (distance === 0) {
                 card.classList.add('opacity-100', 'z-20', 'scale-100', 'blur-none');
                 card.classList.remove('opacity-70', 'opacity-50', 'opacity-25', 'z-10', 'scale-95', 'blur-[1.5px]', 'blur-[3px]');
@@ -1187,8 +1226,8 @@
         }
     };
 
-    // Hero Carrousel du Laptop
-    const heroSlides = ['smartpush', 'speechcontrol', 'cquality'];
+    // Hero Carrousel du Laptop à 4 Slides actives
+    const heroSlides = ['smartpush', 'speechcontrol', 'cquality', 'ccapture'];
     let currentHeroSlideIndex = 0;
     window.setHeroSlide = (slideKey) => {
         currentHeroSlideIndex = heroSlides.indexOf(slideKey);
@@ -1208,6 +1247,12 @@
             }
         });
     };
+
+    // Balayage automatique cyclique de la section Hero
+    setInterval(() => {
+        currentHeroSlideIndex = (currentHeroSlideIndex + 1) % heroSlides.length;
+        window.setHeroSlide(heroSlides[currentHeroSlideIndex]);
+    }, 5000);
 
     // Swipe pour Modules (Tactile et drag)
     const initSwipeGestures = () => {
