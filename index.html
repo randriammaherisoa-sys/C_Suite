@@ -171,8 +171,9 @@
 
 <div id="progress-bar"></div>
 
-<!-- NAVIGATION SUPÉRIEURE -->
+<!-- NAVIGATION SUPÉRIEURE EN PILL -->
 <nav id="nav-pill" class="nav-pill">
+    <!-- Logotype comete.ai -->
     <div class="flex items-center gap-2">
         <a href="https://comete.ai/" class="shrink-0 flex items-center">
             <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/ab4f2f8e-3e94-4b4e-8ff8-e21271d4b3f4.png" alt="comete.ai" class="h-6" />
@@ -180,15 +181,28 @@
         </a>
     </div>
     
+    <!-- Zone d'onglets centrale structurée, fluide et harmonieuse -->
+    <div class="hidden md:flex items-center gap-1 bg-slate-100/60 hover:bg-slate-100/90 border border-slate-200/40 rounded-full p-0.5 transition-all duration-300">
+        <button onclick="document.getElementById('enjeux').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-full text-[11px] text-slate-600 hover:text-themeAccent hover:bg-white font-bold flex items-center gap-1.5 transition-all duration-300 group">
+            <i data-lucide="target" class="w-3.5 h-3.5 text-slate-400 group-hover:text-themeAccent transition-colors"></i>
+            <span>Enjeux</span>
+        </button>
+        <button onclick="document.getElementById('modules').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-full text-[11px] text-slate-600 hover:text-themeAccent hover:bg-white font-bold flex items-center gap-1.5 transition-all duration-300 group">
+            <i data-lucide="blocks" class="w-3.5 h-3.5 text-slate-400 group-hover:text-themeAccent transition-colors"></i>
+            <span>Modules</span>
+        </button>
+        <button onclick="document.getElementById('benefices').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-full text-[11px] text-slate-600 hover:text-themeAccent hover:bg-white font-bold flex items-center gap-1.5 transition-all duration-300 group">
+            <i data-lucide="trending-up" class="w-3.5 h-3.5 text-slate-400 group-hover:text-themeAccent transition-colors"></i>
+            <span>Bénéfices</span>
+        </button>
+        <button onclick="document.getElementById('pourquoi').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-full text-[11px] text-slate-600 hover:text-themeAccent hover:bg-white font-bold flex items-center gap-1.5 transition-all duration-300 group">
+            <i data-lucide="compass" class="w-3.5 h-3.5 text-slate-400 group-hover:text-themeAccent transition-colors"></i>
+            <span>ADN</span>
+        </button>
+    </div>
+    
+    <!-- Bouton CTA principal de démonstration -->
     <div class="flex items-center gap-1.5">
-        <button onclick="document.getElementById('enjeux').scrollIntoView({behavior:'smooth'})" class="px-3 py-1.5 rounded-full text-xs hover:text-themeAccent font-semibold hidden md:inline-flex group">
-            <i data-lucide="target" class="w-4 h-4 text-slate-400 group-hover:text-themeAccent transition-colors"></i>
-            <span> Enjeux</span>
-        </button>
-        <button onclick="document.getElementById('modules').scrollIntoView({behavior:'smooth'})" class="px-3 py-1.5 rounded-full text-xs hover:text-themeAccent font-semibold hidden md:inline-flex group">
-            <i data-lucide="blocks" class="w-4 h-4 text-slate-400 group-hover:text-themeAccent transition-colors"></i>
-            <span> Modules</span>
-        </button>
         <button onclick="window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3JTz751iHQ5Rb5gntRTGFWkr2nO8ocaXYcBoHv6MOaaitFMWgY4O0kzJ5K-xBe6a_tF64_FSyQ', '_blank')" class="px-5 py-3 text-[10px] sm:text-[11px] btn-unified flex items-center gap-2 whitespace-nowrap">
             <span>Demander une démo</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-white"></i>
@@ -1074,7 +1088,7 @@
             let distance = Math.abs(i - activeModuleIndex);
             if (distance > totalModules / 2) distance = totalModules - distance;
 
-            // Restauration exacte des classes blur et opacity de l'image image_9625fb.jpg
+            // Restauration exacte des classes blur et opacity
             if (distance === 0) {
                 card.classList.add('opacity-100', 'z-20', 'scale-100', 'blur-none');
                 card.classList.remove('opacity-70', 'opacity-50', 'opacity-25', 'z-10', 'scale-95', 'blur-[1.5px]', 'blur-[3px]');
