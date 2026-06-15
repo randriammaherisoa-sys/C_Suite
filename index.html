@@ -85,41 +85,95 @@
         .reveal-up { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal-up.active { opacity: 1; transform: translateY(0); }
 
+        /* === NAV-PILL RETRAVAILLÉ (inspiré du header IRVE) === */
         .nav-pill {
-            position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
-            width: 94%; max-width: 1200px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px); border-radius: 9999px;
-            padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;
-            z-index: 300; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: fixed; top: 12px; left: 50%; transform: translateX(-50%);
+            width: 94%; max-width: 1300px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-radius: 9999px;
+            padding: 8px 16px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 300;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 1);
+            transition: all 0.4s ease;
         }
         .nav-pill.scrolled {
-            padding: 8px 18px; width: 85%; max-width: 950px; background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 16px 48px rgba(15, 23, 42, 0.08);
+            padding: 4px 12px;
+            width: 80%; max-width: 1000px;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 16px 48px rgba(15, 23, 42, 0.1);
             border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
-        #progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, #2470ef, #06b6d4); z-index: 400; transition: width 0.1s ease; }
+        /* Onglets centraux : scrollables horizontalement sur mobile */
+        .nav-tabs-wrapper {
+            display: flex; align-items: center; gap: 2px;
+            background: rgba(241, 245, 249, 0.6);
+            border: 1px solid rgba(226, 232, 240, 0.4);
+            border-radius: 9999px;
+            padding: 2px;
+            transition: all 0.4s ease;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            max-width: 100%;
+        }
+        .nav-tabs-wrapper::-webkit-scrollbar { display: none; }
+        .nav-pill.scrolled .nav-tabs-wrapper {
+            background: rgba(241, 245, 249, 0.9);
+            border-color: rgba(226, 232, 240, 0.8);
+        }
 
+        .nav-tab-btn {
+            padding: 6px 10px;
+            border-radius: 9999px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #334155;
+            display: flex; align-items: center; gap: 5px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .nav-tab-btn:hover {
+            color: #2470ef;
+            background: #ffffff;
+        }
+        .nav-tab-btn .lucide {
+            width: 12px; height: 12px;
+            color: #64748b;
+            transition: color 0.3s ease;
+        }
+        .nav-tab-btn:hover .lucide { color: #2470ef; }
+
+        @media (min-width: 768px) {
+            .nav-tab-btn { padding: 7px 14px; font-size: 11px; gap: 6px; }
+            .nav-tab-btn .lucide { width: 14px; height: 14px; }
+        }
+
+        #progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #2470ef, #06b6d4); z-index: 400; transition: width 0.1s ease; }
+
+        /* === BOUTON CTA UNIFIÉ RETRAVAILLÉ (style IRVE) === */
         .btn-unified {
             background-color: #2470ef;
             color: #ffffff !important;
-            font-weight: 700 !important;
+            font-weight: 800 !important;
             text-transform: uppercase !important;
-            letter-spacing: 0.12em !important;
+            letter-spacing: 0.15em !important;
             border-radius: 9999px !important;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-            box-shadow: 0 6px 20px rgba(36, 112, 239, 0.25) !important;
-            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            box-shadow: 0 4px 15px rgba(36, 112, 239, 0.35) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
         }
         .btn-unified:hover:not(:disabled) {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(36, 112, 239, 0.4) !important;
-            background-color: #1d5ecf !important;
+            transform: scale(1.02) translateY(-1px) !important;
+            box-shadow: 0 0 20px rgba(36, 112, 239, 0.7) !important;
+            background-color: #3b82f6 !important;
         }
 
+        /* CTA secondaire */
         .btn-secondary {
             background-color: rgba(255, 255, 255, 0.6) !important;
             backdrop-filter: blur(8px) !important;
@@ -199,7 +253,6 @@
         
         .lucide { width: 1em; height: 1em; }
 
-        /* Effets de lueur premium pour les cartes de valeur */
         .premium-card {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             background: #0b132a;
@@ -210,7 +263,6 @@
             box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.3), 0 0 30px rgba(36, 112, 239, 0.15);
         }
 
-        /* Jauge SVG animée pour l'évaluation */
         .kpi-circle-progress {
             stroke-dasharray: 251.2;
             stroke-dashoffset: 251.2;
@@ -225,41 +277,44 @@
 
 <div id="progress-bar"></div>
 
-<!-- NAVIGATION SUPÉRIEURE EN PILL -->
+<!-- === NAVIGATION SUPÉRIEURE EN PILL RETRAVAILLÉE === -->
 <nav id="nav-pill" class="nav-pill">
-    <!-- Logotype comete.ai -->
-    <div class="flex items-center gap-2">
+    <!-- Logotype comete.ai responsive -->
+    <div class="flex items-center gap-2 shrink-0">
         <a href="https://comete.ai/" class="shrink-0 flex items-center">
-            <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/ab4f2f8e-3e94-4b4e-8ff8-e21271d4b3f4.png" alt="comete.ai" class="h-6" />
-            <span class="ml-2 font-black text-[10px] tracking-widest text-slate-500 border-l border-slate-300 pl-2 uppercase hidden xs:inline">C-SUITE</span>
+            <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/ab4f2f8e-3e94-4b4e-8ff8-e21271d4b3f4.png" alt="comete.ai" class="h-4 sm:h-6 md:h-7 transition-all duration-300" />
+            <span class="ml-2 font-black text-[8px] sm:text-[9px] md:text-[10px] tracking-widest text-slate-500 border-l border-slate-300 pl-2 uppercase hidden xs:inline">C-SUITE</span>
         </a>
     </div>
     
-    <!-- Zone d'onglets centrale structurée, fluide et harmonieuse -->
-    <div class="hidden md:flex items-center gap-1 bg-slate-100/60 hover:bg-slate-100/90 border border-slate-200/40 rounded-full p-0.5 transition-all duration-300">
-        <button onclick="document.getElementById('enjeux').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-full text-[11px] text-[#334155] hover:text-themeAccent hover:bg-white font-bold flex items-center gap-1.5 transition-all duration-300 group">
-            <i data-lucide="target" class="w-3.5 h-3.5 text-slate-500 group-hover:text-themeAccent transition-colors"></i>
+    <!-- Onglets centraux : scrollables sur mobile, centrés sur desktop -->
+    <div class="nav-tabs-wrapper hidden sm:flex">
+        <button onclick="document.getElementById('enjeux').scrollIntoView({behavior:'smooth'})" class="nav-tab-btn group">
+            <i data-lucide="target"></i>
             <span>Enjeux</span>
         </button>
-        <button onclick="document.getElementById('modules').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-full text-[11px] text-[#334155] hover:text-themeAccent hover:bg-white font-bold flex items-center gap-1.5 transition-all duration-300 group">
-            <i data-lucide="blocks" class="w-3.5 h-3.5 text-slate-500 group-hover:text-themeAccent transition-colors"></i>
+        <button onclick="document.getElementById('modules').scrollIntoView({behavior:'smooth'})" class="nav-tab-btn group">
+            <i data-lucide="blocks"></i>
             <span>Modules</span>
         </button>
-        <button onclick="document.getElementById('benefices').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-full text-[11px] text-[#334155] hover:text-themeAccent hover:bg-white font-bold flex items-center gap-1.5 transition-all duration-300 group">
-            <i data-lucide="trending-up" class="w-3.5 h-3.5 text-slate-500 group-hover:text-themeAccent transition-colors"></i>
+        <button onclick="document.getElementById('benefices').scrollIntoView({behavior:'smooth'})" class="nav-tab-btn group">
+            <i data-lucide="trending-up"></i>
             <span>Bénéfices</span>
         </button>
-        <button onclick="document.getElementById('pourquoi').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-full text-[11px] text-[#334155] hover:text-themeAccent hover:bg-white font-bold flex items-center gap-1.5 transition-all duration-300 group">
-            <i data-lucide="compass" class="w-3.5 h-3.5 text-slate-500 group-hover:text-themeAccent transition-colors"></i>
+        <button onclick="document.getElementById('pourquoi').scrollIntoView({behavior:'smooth'})" class="nav-tab-btn group">
+            <i data-lucide="compass"></i>
             <span>ADN</span>
         </button>
     </div>
     
-    <!-- Bouton CTA principal de démonstration -->
-    <div class="flex items-center gap-1.5">
-        <button onclick="window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3JTz751iHQ5Rb5gntRTGFWkr2nO8ocaXYcBoHv6MOaaitFMWgY4O0kzJ5K-xBe6a_tF64_FSyQ', '_blank')" class="px-5 py-3 text-[10px] sm:text-[11px] btn-unified flex items-center gap-2 whitespace-nowrap">
-            <span>Demander une démo</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-white"></i>
+    <!-- CTA principal style IRVE (icône dans cercle blanc) -->
+    <div class="flex items-center gap-1.5 shrink-0">
+        <button onclick="window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3JTz751iHQ5Rb5gntRTGFWkr2nO8ocaXYcBoHv6MOaaitFMWgY4O0kzJ5K-xBe6a_tF64_FSyQ', '_blank')" class="px-3 py-2 sm:px-5 sm:py-3 text-[8px] sm:text-[10px] md:text-[11px] btn-unified flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+            <span class="hidden min-[400px]:inline">Demander une démo</span>
+            <span class="min-[400px]:hidden">Démo</span>
+            <span class="flex items-center justify-center w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-white/20 border border-white/20 backdrop-blur-md shrink-0">
+                <i data-lucide="arrow-right" class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 text-white"></i>
+            </span>
         </button>
     </div>
 </nav>
@@ -270,7 +325,6 @@
     <!-- 1. HERO SECTION AVEC BADGES HUD ORBITAUX ET FLOTTANTS -->
     <section id="hero" class="min-h-screen lg:h-screen lg:max-h-[850px] relative flex items-center overflow-hidden bg-white text-left pt-24 pb-12 lg:pt-28 lg:pb-16 border-b border-slate-100">
         <div class="absolute inset-0 z-0 pointer-events-none">
-            <!-- Miroir horizontal de l'image de fond -->
             <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/608b1699-7f06-47b2-bedd-9591922c33d6.png" class="absolute inset-0 w-full h-full object-cover opacity-20 object-center transition-opacity duration-500 scale-x-[-1]" alt="Arrière-plan comete.ai" />
             <div class="absolute top-0 right-0 w-[55%] h-[55%] bg-gradient-to-bl from-blue-100/40 to-transparent rounded-full filter blur-[120px]"></div>
             <div class="absolute bottom-0 left-[5%] w-[45%] h-[45%] bg-gradient-to-tr from-cyan-100/30 to-transparent rounded-full filter blur-[140px]"></div>
@@ -288,7 +342,7 @@
                     </div>
 
                     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-light text-slate-900 leading-[1.1] tracking-tight">
-                        Les conseillers ont tout ce qu’il faut pour exceller. <span class="text-gradient-animated font-black block mt-2">C-Suite aussi.</span>
+                        Les conseillers ont tout ce qu'il faut pour exceller. <span class="text-gradient-animated font-black block mt-2">C-Suite aussi.</span>
                     </h1>
 
                     <p class="text-xs sm:text-sm md:text-base text-slate-850 font-light leading-relaxed max-w-xl">
@@ -312,7 +366,6 @@
                 <div class="lg:col-span-6 relative w-full select-none mt-8 lg:mt-0">
                     <div class="absolute inset-0 bg-themeAccent/10 blur-3xl rounded-full transform -translate-x-6 translate-y-6"></div>
                     
-                    <!-- HUD Orbitaux (Positionnement absolu sur écran large, dockés sous l'appareil sur mobile) -->
                     <div class="relative w-full max-w-[540px] mx-auto">
                         
                         <!-- Badge 1: Satisfaction (Haut-Gauche) -->
@@ -495,12 +548,10 @@
         </div>
     </section>
 
-    <!-- 2. SECTION 1 : LES ENJEUX COMPRESSÉE VERTICALEMENT AVEC ANIMATION -->
+    <!-- 2. SECTION 1 : LES ENJEUX -->
     <section id="enjeux" class="py-6 bg-[#f8fafc] text-left border-t border-slate-100 relative overflow-hidden isolate">
         <div class="absolute inset-0 -z-10 pointer-events-none overflow-hidden opacity-25">
-            <!-- Grille géométrique fluide -->
             <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-30"></div>
-            <!-- Réseau de circuits SVG avec faisceaux d'impulsion -->
             <svg class="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <path d="M -100,150 L 200,150 L 300,250 L 600,250 L 700,150 L 1500,150" stroke="#2470ef" stroke-width="1" fill="none" stroke-dasharray="10 150" class="animate-dash-flow" />
                 <path d="M 100,450 L 500,450 L 600,350 L 900,350 L 1000,450 L 1800,450" stroke="#0ea5e9" stroke-width="1" fill="none" stroke-dasharray="10 200" class="animate-dash-flow" style="animation-delay: 2s;" />
@@ -511,14 +562,13 @@
 
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative">
             <div class="text-center max-w-3xl mx-auto mb-4">
-                <span class="px-3 py-1 bg-blue-50 text-themeAccent rounded-full text-[10px] font-bold uppercase inline-block mb-2">Les enjeux aujourd’hui</span>
+                <span class="px-3 py-1 bg-blue-50 text-themeAccent rounded-full text-[10px] font-bold uppercase inline-block mb-2">Les enjeux aujourd'hui</span>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 tracking-tight leading-tight">Un nouveau standard de <span class="text-gradient-animated font-black">performance est possible</span></h2>
                 <p class="text-slate-800 text-xs sm:text-sm font-semibold mx-auto mt-2 max-w-2xl leading-relaxed">
                     La relation client est un levier stratégique de différenciation. Les entreprises doivent offrir des réponses plus rapides, plus personnalisées et plus fiables tout en maintenant la maîtrise de leurs coûts et de leurs risques. Pour y parvenir, elles cherchent à renforcer les capacités de leurs équipes grâce à des outils capables de :
                 </p>
             </div>
 
-            <!-- Grille d'enjeux ultra compacte (Hauteur globale diminuée) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
                 
                 <div class="lg:col-span-3 flex flex-col gap-3">
@@ -536,7 +586,6 @@
                     </div>
                 </div>
 
-                <!-- Conseillère à hauteur modérée pour forcer la compression de la section -->
                 <div class="lg:col-span-6 flex justify-center items-center relative min-h-0 py-2">
                     <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/d8caa2b7-69dd-4e0d-9156-804fcafbaac8.png" class="max-h-[480px] w-auto object-contain drop-shadow-xl transition-transform hover:scale-[1.02]" alt="Conseillère comete.ai C-Suite" />
                 </div>
@@ -548,7 +597,7 @@
                     </div>
                     <div class="bg-[#0b132a] border border-white/10 p-4 rounded-xl shadow-sm glow-card flex items-start gap-3 transition-transform hover:scale-[1.02] text-white">
                         <span class="w-8 h-8 rounded-lg bg-emerald-50/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20"><i data-lucide="zap" class="w-4 h-4"></i></span>
-                        <div><h3 class="font-extrabold text-white text-[11px] mb-0.5">Accélérer le traitement des demandes</h3><p class="text-slate-350 text-[10px] leading-snug font-light">Automatiser le traitement documentaire et l’analyse OCR des justificatifs.</p></div>
+                        <div><h3 class="font-extrabold text-white text-[11px] mb-0.5">Accélérer le traitement des demandes</h3><p class="text-slate-350 text-[10px] leading-snug font-light">Automatiser le traitement documentaire et l'analyse OCR des justificatifs.</p></div>
                     </div>
                     <div class="bg-[#0b132a] border border-white/10 p-4 rounded-xl shadow-sm glow-card flex items-start gap-3 transition-transform hover:scale-[1.02] text-white">
                         <span class="w-8 h-8 rounded-lg bg-purple-50/10 text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/20"><i data-lucide="bar-chart" class="w-4 h-4"></i></span>
@@ -558,11 +607,10 @@
 
             </div>
 
-            <!-- Signature Slogan -->
             <div class="mt-4 flex justify-center reveal-up">
                 <div class="relative py-2 px-12 text-center group select-none max-w-3xl">
                     <h3 class="relative z-10 flex flex-col items-center">
-                        <span class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none text-slate-900 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-themeAccent to-cyan-500 bg-[size:200%_auto]">C’est exactement ce que C-Suite fait.</span>
+                        <span class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none text-slate-900 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-themeAccent to-cyan-500 bg-[size:200%_auto]">C'est exactement ce que C-Suite fait.</span>
                     </h3>
                     <div class="relative z-10 mt-2 mx-auto h-[2.5px] w-12 bg-gradient-to-r from-themeAccent to-cyan-400 rounded-full"></div>
                 </div>
@@ -570,15 +618,13 @@
         </div>
     </section>
 
-    <!-- 3. CONSTELLATION ORBITALE DES MODULES EN CARROUSEL COMPRESSÉ (Resserré) -->
+    <!-- 3. CONSTELLATION ORBITALE DES MODULES -->
     <section id="modules" class="py-12 md:py-16 overflow-hidden text-left relative w-full border-t border-slate-200/80 bg-white transition-all duration-1000">
         
-        <!-- Image d'arrière-plan technologique fluide de l'utilisateur à Opacité 10% -->
         <div class="absolute inset-0 z-0 pointer-events-none">
             <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/3d358a9d-0e0b-440e-bca3-22b27b667dc6.png" class="w-full h-full object-cover opacity-10 object-center mix-blend-luminosity" alt="Arrière-plan technique comete.ai" />
         </div>
         
-        <!-- Halo de Glow Ambiant Dynamique -->
         <div id="modules-ambient-glow" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full filter blur-[140px] opacity-10 pointer-events-none transition-all duration-1000 ease-in-out bg-blue-500"></div>
 
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full">
@@ -598,7 +644,6 @@
                 </p>
             </div>
 
-            <!-- CONTENEUR DU CARROUSEL COMPRESSÉ EN HAUTEUR -->
             <div class="relative w-full max-w-6xl mx-auto py-2">
                 
                 <div class="absolute top-1/2 -translate-y-1/2 -left-3 sm:left-2 z-30">
@@ -612,7 +657,6 @@
                     </button>
                 </div>
 
-                <!-- Viewport avec padding réduit (py-4) pour resserrer la hauteur -->
                 <div id="modules-viewport" class="overflow-visible w-full py-4 select-none relative cursor-grab active:cursor-grabbing">
                     <div id="modules-track" class="flex gap-6 transition-transform duration-500 ease-out" style="transform: translateX(0px);">
                         
@@ -794,7 +838,6 @@
                     </div>
                 </div>
 
-                <!-- Indicateurs de pagination (Dots) -->
                 <div class="flex justify-center items-center gap-2.5 mt-4">
                     <button onclick="window.setModuleIndex(0)" id="module-dot-0" class="h-2 w-2 rounded-full bg-slate-200 transition-all duration-300"></button>
                     <button onclick="window.setModuleIndex(1)" id="module-dot-1" class="h-2 w-2 rounded-full bg-slate-200 transition-all duration-300"></button>
@@ -805,7 +848,6 @@
                     <button onclick="window.setModuleIndex(6)" id="module-dot-6" class="h-2 w-2 rounded-full bg-slate-200 transition-all duration-300"></button>
                 </div>
 
-                <!-- NEW CTA ZONE B (Fin de la section Modules) -->
                 <div class="mt-8 text-center reveal-up">
                     <button onclick="window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3JTz751iHQ5Rb5gntRTGFWkr2nO8ocaXYcBoHv6MOaaitFMWgY4O0kzJ5K-xBe6a_tF64_FSyQ', '_blank')" class="px-6 py-3.5 text-[11px] btn-secondary inline-flex items-center gap-2">
                         <span>Sélectionner mes modules</span>
@@ -817,7 +859,7 @@
         </div>
     </section>
 
-    <!-- 4. SECTION 3 : BÉNÉFICES MÉTIERS (SÉPARATEUR PREMIUM SÉCURISÉ CONTRE LES CHEVAUCHEMENTS) -->
+    <!-- 4. SECTION 3 : BÉNÉFICES MÉTIERS -->
     <section id="benefices" class="py-12 md:py-16 bg-gradient-to-b from-[#f8fafc] via-white to-[#f8fafc] text-left relative overflow-hidden isolate">
         <div class="absolute inset-0 -z-10 pointer-events-none overflow-hidden opacity-25">
             <svg class="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -828,7 +870,6 @@
                         <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
                     </linearGradient>
                 </defs>
-                <!-- CORRECTIF CRITIQUE (image_84e426.png) : Remplissage transparent (fill="none") pour préserver une lisibilité absolue et éviter les bandes sombres -->
                 <path d="M -200,150 C 200,300 600,100 1000,250 C 1400,400 1800,200 2200,350" fill="none" stroke="url(#waveGrad)" stroke-width="1.5" class="animate-float" style="animation-duration: 10s;" />
                 <path d="M -200,250 C 300,150 700,400 1100,200 C 1500,100 1900,350 2300,150" fill="none" stroke="url(#waveGrad)" stroke-width="1" stroke-dasharray="12, 180" class="animate-dash-flow" style="animation-duration: 15s;" />
                 <path d="M -200,350 C 400,200 800,450 1200,250 C 1600,150 2000,400 2400,200" fill="none" stroke="url(#waveGrad)" stroke-dasharray="6 6" stroke-width="0.75" class="animate-float" style="animation-duration: 12s;" />
@@ -837,7 +878,6 @@
 
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
             
-            <!-- En-tête de section explicite avec z-10 et position relative pour un contraste intègre -->
             <div class="text-center max-w-4xl mx-auto mb-16 relative z-10">
                 <span class="px-3.5 py-1 bg-blue-50 text-themeAccent rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-3 border border-blue-100/50">Des bénéfices concrets pour chaque métier</span>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 tracking-tight leading-tight relative z-20">
@@ -848,23 +888,18 @@
                 </p>
             </div>
 
-            <!-- Double alignement asymétrique avec fiches sombres d'Inspiration image_93d17b.jpg & image_936423.jpg -->
             <div class="space-y-12 max-w-6xl mx-auto">
                 
-                <!-- PREMIER BLOC : IMAGE À GAUCHE SANS FOND NI RELIEF, 3 BÉNÉFICES À DROITE (SOMBRES) -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                     
-                    <!-- Colonne Image de gauche (Agrandie, sans fond, s'intègre naturellement) -->
                     <div class="lg:col-span-5 flex justify-center items-center">
                         <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/9fb0e649-6895-4f9b-b857-94e35a6e660c.png" 
                              class="h-[320px] md:h-[420px] lg:h-[500px] w-auto object-contain transition-transform hover:scale-[1.02] pointer-events-none" 
                              alt="C-Suite Performance & Qualité" />
                     </div>
                     
-                    <!-- Colonne 3 fiches sombres à droite -->
                     <div class="lg:col-span-7 space-y-4">
                         
-                        <!-- Card 1 (Badges Bleus - image_845121.png) -->
                         <div class="premium-card border border-white/10 p-5 rounded-[24px] flex items-start gap-4 group text-white">
                             <div class="w-11 h-11 rounded-full bg-blue-500/10 text-themeAccent flex items-center justify-center shrink-0 border border-blue-500/20 group-hover:bg-themeAccent group-hover:text-white transition-all duration-300">
                                 <i data-lucide="users" class="w-5 h-5"></i>
@@ -874,7 +909,6 @@
                                 <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-light">
                                     Les équipes disposent instantanément des informations et des recommandations dont elles ont besoin pour répondre avec justesse et efficacité.
                                 </p>
-                                <!-- BADGES DE COULEUR INTERACTIFS (image_845121.png) -->
                                 <div class="flex flex-wrap gap-2 pt-3 border-t border-white/5 mt-3 text-[9px] font-bold uppercase tracking-wider">
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500 text-white border border-blue-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> GAIN DE TEMPS</span>
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500 text-white border border-blue-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> RÉPONSES HOMOGÈNES</span>
@@ -883,7 +917,6 @@
                             </div>
                         </div>
 
-                        <!-- Card 2 (Badges Cyan - image_845121.png) -->
                         <div class="premium-card border border-white/10 p-5 rounded-[24px] flex items-start gap-4 group text-white">
                             <div class="w-11 h-11 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="smile" class="w-5 h-5"></i>
@@ -893,7 +926,6 @@
                                 <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-light">
                                     Chaque interaction devient plus fluide, plus rapide et plus personnalisée, réduisant les frictions et l'effort perçu par le client.
                                 </p>
-                                <!-- BADGES DE COULEUR INTERACTIFS (image_845121.png) -->
                                 <div class="flex flex-wrap gap-2 pt-3 border-t border-white/5 mt-3 text-[9px] font-bold uppercase tracking-wider">
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500 text-white border border-cyan-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> MOINS D'EFFORT CLIENT</span>
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500 text-white border border-cyan-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> TRAITEMENT RAPIDE</span>
@@ -902,7 +934,6 @@
                             </div>
                         </div>
 
-                        <!-- Card 3 (Badges Indigo - image_845121.png) -->
                         <div class="premium-card border border-white/10 p-5 rounded-[24px] flex items-start gap-4 group text-white">
                             <div class="w-11 h-11 rounded-full bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/20 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="shield-check" class="w-5 h-5"></i>
@@ -912,7 +943,6 @@
                                 <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-light">
                                     Les contrôles et les audits ne reposent plus uniquement sur des échantillons d'appels mais sur l'intégralité du flux d'appels.
                                 </p>
-                                <!-- BADGES DE COULEUR INTERACTIFS (image_845121.png) -->
                                 <div class="flex flex-wrap gap-2 pt-3 border-t border-white/5 mt-3 text-[9px] font-bold uppercase tracking-wider">
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#4f46e5] text-white border border-indigo-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> 100% DES FLUX AUDITÉS</span>
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#4f46e5] text-white border border-indigo-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> ÉCARTS SIGNALÉS</span>
@@ -924,7 +954,6 @@
                     </div>
                 </div>
                 
-                <!-- SÉPARATEUR DE HAUTE COUTURE (Comme requis sur image_936423.jpg pour séparer les flux haut/bas) -->
                 <div class="relative py-12 flex items-center justify-center">
                     <div class="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
                     <div class="relative z-10 px-6 py-1.5 bg-[#090f1e] border border-white/10 rounded-full shadow-sm flex items-center gap-2">
@@ -933,13 +962,10 @@
                     </div>
                 </div>
 
-                <!-- DEUXIÈME BLOC : 3 BÉNÉFICES À GAUCHE (SOMBRES), IMAGE À DROITE SANS FOND NI RELIEF -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                     
-                    <!-- Colonne 3 fiches sombres à gauche -->
                     <div class="lg:col-span-7 space-y-4 order-2 lg:order-1">
                         
-                        <!-- Card 4 (Badges Teal - image_845121.png) -->
                         <div class="premium-card border border-white/10 p-5 rounded-[24px] flex items-start gap-4 group text-white">
                             <div class="w-11 h-11 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/20 group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="database" class="w-5 h-5"></i>
@@ -949,7 +975,6 @@
                                 <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-light">
                                     Les conversations, documents et interactions sont convertis en données structurées exploitables pour optimiser l'offre et les processus de l'entreprise.
                                 </p>
-                                <!-- BADGES DE COULEUR INTERACTIFS (image_845121.png) -->
                                 <div class="flex flex-wrap gap-2 pt-3 border-t border-white/5 mt-3 text-[9px] font-bold uppercase tracking-wider">
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-teal-600 text-white border border-teal-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> ANALYSE THÉMATIQUE</span>
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-teal-600 text-white border border-teal-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> SENTIMENTS CAPTÉS</span>
@@ -958,7 +983,6 @@
                             </div>
                         </div>
 
-                        <!-- Card 5 (Badges Emerald - image_845121.png) -->
                         <div class="premium-card border border-white/10 p-5 rounded-[24px] flex items-start gap-4 group text-white">
                             <div class="w-11 h-11 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="trending-up" class="w-5 h-5"></i>
@@ -966,9 +990,8 @@
                             <div class="space-y-1.5 flex-1">
                                 <h3 class="font-extrabold text-white text-sm sm:text-base tracking-tight">Une efficacité opérationnelle accrue</h3>
                                 <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-light">
-                                    L'automatisation des tâches répétitives et l’analyse intelligente permettent de libérer les collaborateurs au profit de la relation humaine.
+                                    L'automatisation des tâches répétitives et l'analyse intelligente permettent de libérer les collaborateurs au profit de la relation humaine.
                                 </p>
-                                <!-- BADGES DE COULEUR INTERACTIFS (image_845121.png) -->
                                 <div class="flex flex-wrap gap-2 pt-3 border-t border-white/5 mt-3 text-[9px] font-bold uppercase tracking-wider">
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-600 text-white border border-emerald-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> ZÉRO RESSAISIE</span>
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-600 text-white border border-emerald-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> SAISIE OCR AUTOMATIQUE</span>
@@ -977,7 +1000,6 @@
                             </div>
                         </div>
 
-                        <!-- Card 6 (Badges Purple - image_845121.png) -->
                         <div class="premium-card border border-white/10 p-5 rounded-[24px] flex items-start gap-4 group text-white">
                             <div class="w-11 h-11 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/20 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                                 <i data-lucide="lock" class="w-5 h-5"></i>
@@ -987,7 +1009,6 @@
                                 <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-light">
                                     Les coordonnées bancaires et informations sensibles sont chiffrées et cloisonnées dès leur capture lors des sessions d'échanges.
                                 </p>
-                                <!-- BADGES DE COULEUR INTERACTIFS (image_845121.png) -->
                                 <div class="flex flex-wrap gap-2 pt-3 border-t border-white/5 mt-3 text-[9px] font-bold uppercase tracking-wider">
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-600 text-white border border-purple-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> CLOISONNEMENT PCI-DSS</span>
                                     <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-600 text-white border border-purple-400/20"><i data-lucide="check" class="w-3 h-3 text-white"></i> SÉCURISATION INSTANTANÉE</span>
@@ -998,7 +1019,6 @@
 
                     </div>
                     
-                    <!-- Colonne Image de droite (Agrandie, sans fond, s'intègre naturellement) -->
                     <div class="lg:col-span-5 flex justify-center items-center order-1 lg:order-2">
                         <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/3dd696ac-8401-4462-952d-0891ccedc710.png" 
                              class="h-[320px] md:h-[420px] lg:h-[500px] w-auto object-contain transition-transform hover:scale-[1.02] pointer-events-none" 
@@ -1012,15 +1032,13 @@
         </div>
     </section>
 
-    <!-- 5. SECTION 4 : RÉSULTATS CHIFFRÉS (HABILLAGE SUPER TECH AVEC COMPTEURS ANIMÉS PAR SCROLL) -->
+    <!-- 5. SECTION 4 : RÉSULTATS CHIFFRÉS -->
     <section id="benefices-chiffres" class="py-16 md:py-24 bg-[#f8fafc] text-left relative overflow-hidden border-t border-b border-slate-200/50">
         <div class="absolute inset-0 z-0 pointer-events-none select-none">
-            <!-- Arrière-plan KPI technologique unique demandé par l'utilisateur -->
             <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/11f40069-754c-4f19-800d-8b664d4fa65c.png" 
                  alt="KPI Dashboard Background" 
                  class="w-full h-full object-cover opacity-10 filter saturate-50" />
             <div class="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/90 via-transparent to-[#f8fafc]/90"></div>
-            <!-- Halos technologiques d'éclairage -->
             <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-100/50 rounded-full filter blur-[100px]"></div>
             <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-cyan-100/40 rounded-full filter blur-[100px]"></div>
         </div>
@@ -1036,10 +1054,8 @@
                 </p>
             </div>
 
-            <!-- Grille d'indicateurs métriques noirs premium ultra-tech (Inspiration image_84c981.png) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 
-                <!-- Card Metric 1: Temps Moyen de Traitement (AHT) -->
                 <div class="kpi-card-dark bg-[#090f1e] border border-white/10 p-6 rounded-3xl hover:border-themeAccent/80 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
@@ -1047,7 +1063,6 @@
                                 <i data-lucide="hourglass" class="w-4 h-4"></i>
                                 <span class="absolute inset-0 rounded-lg bg-blue-500/20 animate-radar-pulse animate-ping"></span>
                             </span>
-                            <!-- Miniature radar visualization -->
                             <div class="flex items-center gap-1.5 bg-white/5 border border-white/10 py-1 px-2.5 rounded-full text-[9px] font-mono font-bold text-slate-300">
                                 <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
                                 <span>LIVE RUNTIME</span>
@@ -1064,7 +1079,6 @@
                         <p class="text-slate-300 text-xs font-light leading-relaxed">
                             Suppression instantanée des temps de recherche d'informations réglementaires grâce aux fiches et réponses poussées en direct par **SmartPush**.
                         </p>
-                        <!-- Graphe de tendance simulé en CSS -->
                         <div class="flex items-end gap-1 h-3.5 mt-3 border-b border-white/10 pb-0.5">
                             <span class="w-full bg-slate-800 h-3 rounded-t-sm"></span>
                             <span class="w-full bg-slate-800 h-2.5 rounded-t-sm"></span>
@@ -1074,14 +1088,12 @@
                     </div>
                 </div>
 
-                <!-- Card Metric 2: Conformité du Discours (Terminal de contrôle) -->
                 <div class="kpi-card-dark bg-[#090f1e] border border-white/10 p-6 rounded-3xl hover:border-emerald-500/80 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
                             <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
                                 <i data-lucide="shield-alert" class="w-4 h-4"></i>
                             </span>
-                            <!-- Live Compliant tag -->
                             <span class="text-[9px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">SECURED AUDIT</span>
                         </div>
                         <div class="space-y-1">
@@ -1095,7 +1107,6 @@
                         <p class="text-slate-300 text-xs font-light leading-relaxed">
                             Vérification permanente et en temps réel des scripts de vente, mentions juridiques et RGPD indispensables sur l'ensemble de vos flux audio.
                         </p>
-                        <!-- Mini terminal console text -->
                         <div class="bg-black/40 border border-white/5 rounded-lg p-2 mt-3 font-mono text-[8px] text-emerald-400 space-y-0.5 leading-none">
                             <div>comete.ai > speech.audit()</div>
                             <div class="text-slate-300">STATUS : 100% DISCOURS CONFORME</div>
@@ -1103,14 +1114,12 @@
                     </div>
                 </div>
 
-                <!-- Card Metric 3: Évaluation Qualité -->
                 <div class="kpi-card-dark bg-[#090f1e] border border-white/10 p-6 rounded-3xl hover:border-teal-500/80 hover:shadow-2xl hover:shadow-teal-500/10 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
                             <span class="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/20">
                                 <i data-lucide="check-square" class="w-4 h-4"></i>
                             </span>
-                            <!-- SVG Gauge -->
                             <div class="relative w-8 h-8 flex items-center justify-center">
                                 <svg class="w-8 h-8 transform -rotate-90">
                                     <circle cx="16" cy="16" r="13" class="stroke-slate-800" stroke-width="2.5" fill="transparent"></circle>
@@ -1137,7 +1146,6 @@
                     </div>
                 </div>
 
-                <!-- Card Metric 4: Vitesse de Qualification Dossier (Scanner Laser) -->
                 <div class="kpi-card-dark bg-[#090f1e] border border-white/10 p-6 rounded-3xl hover:border-orange-500/80 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
@@ -1157,7 +1165,6 @@
                         <p class="text-slate-300 text-xs font-light leading-relaxed">
                             Extraction automatique de données structurées et qualification documentaire par **C-Capture** pour alimenter le CRM en temps réel.
                         </p>
-                        <!-- Scanner Laser visual representation -->
                         <div class="relative h-4 bg-slate-950 rounded border border-white/5 mt-3 overflow-hidden">
                             <div class="absolute inset-y-0 w-0.5 bg-orange-500 animate-scan-vertical"></div>
                             <span class="absolute inset-0 flex items-center justify-center text-[7px] font-mono text-orange-400/60 uppercase tracking-widest leading-none">ANALYSING JUSTIFICATIF...</span>
@@ -1165,7 +1172,6 @@
                     </div>
                 </div>
 
-                <!-- Card Metric 5: Charge de Travail Superviseur (Micro-Histogramme) -->
                 <div class="kpi-card-dark bg-[#090f1e] border border-white/10 p-6 rounded-3xl hover:border-purple-500/80 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
@@ -1196,7 +1202,6 @@
                     </div>
                 </div>
 
-                <!-- Card Metric 6: C-Visio Visual Support -->
                 <div class="kpi-card-dark bg-[#090f1e] border border-white/10 p-6 rounded-3xl hover:border-violet-500/80 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
@@ -1214,7 +1219,6 @@
                         <p class="text-slate-300 text-xs font-light leading-relaxed">
                             Bascule fluide de la voix vers un flux vidéo intelligent en direct pour authentifier des pièces complexes ou guider des installations matérielles.
                         </p>
-                        <!-- Simulated active video panel with audio line waveforms -->
                         <div class="flex justify-between items-center bg-white/5 border border-white/5 rounded-lg p-2 mt-3 text-[8px] font-mono">
                             <span class="text-slate-300">VISIO_FEED_ACTIVE</span>
                             <div class="flex items-center gap-1">
@@ -1227,7 +1231,6 @@
 
             </div>
 
-            <!-- NEW CTA ZONE C (Fin de la section Impacts / Chiffres) -->
             <div class="mt-12 text-center reveal-up">
                 <button onclick="window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3JTz751iHQ5Rb5gntRTGFWkr2nO8ocaXYcBoHv6MOaaitFMWgY4O0kzJ5K-xBe6a_tF64_FSyQ', '_blank')" class="px-8 py-4 text-[11px] btn-unified inline-flex items-center justify-center gap-2.5 shadow-xl shadow-blue-500/10 hover:shadow-blue-500/25">
                     <span>Simuler notre retour sur investissement</span>
@@ -1239,16 +1242,14 @@
         </div>
     </section>
 
-    <!-- 6. SECTION 5 : POURQUOI COMETE.AI (TROIS EXPERTISES AVEC RESEAU DE NEURONES ET COMPASS ROTATIF) -->
+    <!-- 6. SECTION 5 : POURQUOI COMETE.AI -->
     <section id="pourquoi" class="py-12 md:py-16 bg-[#f8fafc] text-slate-900 overflow-hidden text-left relative border-t border-slate-100 isolate">
         <div class="absolute inset-0 -z-10 pointer-events-none overflow-hidden opacity-25">
-            <!-- Boussole orbitale vectorielle -->
             <div class="absolute -bottom-10 right-10 w-96 h-96 border border-themeAccent/15 rounded-full animate-spin-slow flex items-center justify-center">
                 <div class="w-80 h-80 border border-dashed border-themeAccent/20 rounded-full flex items-center justify-center">
                     <div class="w-48 h-48 border border-themeAccent/10 rounded-full"></div>
                 </div>
             </div>
-            <!-- Étoiles/Particules de graphe interconnectées -->
             <svg class="absolute top-0 right-0 w-full h-full text-slate-200" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="200" cy="150" r="2" fill="#2470ef" class="animate-pulse" />
                 <circle cx="280" cy="220" r="1.5" fill="#2470ef" />
@@ -1269,10 +1270,8 @@
                 </p>
             </div>
 
-            <!-- Grille de l'ADN avec cartes sombres et élégantes -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 
-                <!-- Pilier 1 -->
                 <div class="bg-[#0b132a] border border-white/10 p-6 rounded-3xl flex flex-col justify-between hover:border-[#2470ef]/40 hover:shadow-lg transition-all duration-300 text-white font-sans">
                     <div class="space-y-4">
                         <span class="w-12 h-12 rounded-2xl bg-blue-500/10 text-themeAccent flex items-center justify-center"><i data-lucide="compass" class="w-6 h-6"></i></span>
@@ -1285,7 +1284,6 @@
                     </div>
                 </div>
 
-                <!-- Pilier 2 -->
                 <div class="bg-[#0b132a] border border-white/10 p-6 rounded-3xl flex flex-col justify-between hover:border-[#2470ef]/40 hover:shadow-lg transition-all duration-300 text-white font-sans">
                     <div class="space-y-4">
                         <span class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center"><i data-lucide="cpu" class="w-6 h-6"></i></span>
@@ -1300,7 +1298,6 @@
                     </div>
                 </div>
 
-                <!-- Pilier 3 -->
                 <div class="bg-[#0b132a] border border-white/10 p-6 rounded-3xl flex flex-col justify-between hover:border-[#2470ef]/40 hover:shadow-lg transition-all duration-300 text-white font-sans">
                     <div class="space-y-4">
                         <span class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center"><i data-lucide="activity" class="w-6 h-6"></i></span>
@@ -1317,7 +1314,6 @@
 
             </div>
 
-            <!-- NEW CTA ZONE D (Fin de la section Pourquoi / ADN) -->
             <div class="mt-12 text-center reveal-up">
                 <button onclick="window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3JTz751iHQ5Rb5gntRTGFWkr2nO8ocaXYcBoHv6MOaaitFMWgY4O0kzJ5K-xBe6a_tF64_FSyQ', '_blank')" class="px-6 py-3.5 text-[11px] btn-secondary inline-flex items-center gap-2">
                     <span>Échanger sur nos processus métiers</span>
@@ -1328,9 +1324,8 @@
         </div>
     </section>
 
-    <!-- 7. SECTION 6 : CTA FINAL AVEC SECTION BLANCHE ET BLOC DE TEXTE SOMBRE -->
+    <!-- 7. SECTION 6 : CTA FINAL -->
     <section class="py-16 md:py-24 bg-white text-left overflow-hidden relative min-h-[480px] flex items-center border-t border-slate-100">
-        <!-- Arrière-plan de la section à 10% d'opacité -->
         <div class="absolute inset-0 z-0 pointer-events-none select-none">
             <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/0ac6af1f-41df-41c2-8de3-f28497decd2e.png" 
                  alt="Arrière-plan technologique comete.ai C-Suite CTA" 
@@ -1339,7 +1334,6 @@
 
         <div class="max-w-7xl mx-auto px-4 md:px-6 w-full relative z-10">
             
-            <!-- BLOC CONTENEUR DE TEXTE SOMBRE SÉCURISÉ POUR MISE EN VALEUR -->
             <div class="max-w-3xl w-full mx-auto space-y-6 md:space-y-10 bg-[#0b132a]/95 backdrop-blur-xl border border-white/10 rounded-[32px] p-6 sm:p-10 md:p-12 shadow-2xl text-center">
                 <div class="relative mx-auto w-16 h-16 flex items-center justify-center rounded-2xl border border-white/10 bg-slate-900/60 shadow-lg">
                     <i data-lucide="zap" class="w-8 h-8 text-[#2470ef] fill-[#2470ef]/20 animate-pulse"></i>
@@ -1430,7 +1424,6 @@
             let distance = Math.abs(i - activeModuleIndex);
             if (distance > totalModules / 2) distance = totalModules - distance;
 
-            // Restauration exacte des classes blur et opacity
             if (distance === 0) {
                 card.classList.add('opacity-100', 'z-20', 'scale-100', 'blur-none');
                 card.classList.remove('opacity-70', 'opacity-50', 'opacity-25', 'z-10', 'scale-95', 'blur-[1.5px]', 'blur-[3px]');
@@ -1497,19 +1490,16 @@
         });
     };
 
-    // Balayage automatique cyclique de la section Hero
     setInterval(() => {
         currentHeroSlideIndex = (currentHeroSlideIndex + 1) % heroSlides.length;
         window.setHeroSlide(heroSlides[currentHeroSlideIndex]);
     }, 5000);
 
-    // Swipe pour Modules (Tactile et drag)
     const initSwipeGestures = () => {
         const viewport = document.getElementById('modules-viewport');
         let startX = 0;
         if (!viewport) return;
 
-        // Mouse Events
         viewport.addEventListener('mousedown', (e) => startX = e.clientX);
         viewport.addEventListener('mousemove', (e) => {
             if (startX === 0) return;
@@ -1521,14 +1511,13 @@
         });
         window.addEventListener('mouseup', () => startX = 0);
 
-        // Touch Events (Mobile responsiveness)
         viewport.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
         }, { passive: true });
         viewport.addEventListener('touchmove', (e) => {
             if (startX === 0) return;
             const diffX = startX - e.touches[0].clientX;
-            if (Math.abs(diffX) > 50) { // slightly more sensitive on touch
+            if (Math.abs(diffX) > 50) {
                 window.setModuleIndex(activeModuleIndex + (diffX > 0 ? 1 : -1));
                 startX = 0;
             }
@@ -1536,7 +1525,7 @@
         viewport.addEventListener('touchend', () => startX = 0);
     };
 
-    // Gestion du Scroll (Friction, barre de progression)
+    // === GESTION DU SCROLL (NAV-PILL) ===
     window.addEventListener('scroll', () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1544,8 +1533,14 @@
         document.getElementById("progress-bar").style.width = scrolled + "%";
 
         const navPill = document.getElementById("nav-pill");
-        if (winScroll > 40) navPill.classList.add('scrolled');
-        else navPill.classList.remove('scrolled');
+        if (navPill) {
+            // Seuil à 50px comme dans le site IRVE
+            if (winScroll > 50) {
+                navPill.classList.add('scrolled');
+            } else {
+                navPill.classList.remove('scrolled');
+            }
+        }
 
         document.querySelectorAll('.reveal-up').forEach(el => {
             const rect = el.getBoundingClientRect();
@@ -1560,12 +1555,12 @@
                 const target = parseInt(counter.getAttribute('data-target'));
                 const prefix = counter.getAttribute('data-prefix') || '';
                 const suffix = counter.getAttribute('data-suffix') || '';
-                const duration = 1500; // milliseconds
+                const duration = 1500;
                 let startTimestamp = null;
                 const step = (timestamp) => {
                     if (!startTimestamp) startTimestamp = timestamp;
                     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    const easeProgress = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+                    const easeProgress = 1 - Math.pow(1 - progress, 3);
                     const currentValue = Math.floor(easeProgress * target);
                     counter.textContent = `${prefix}${currentValue}${suffix}`;
                     if (progress < 1) {
@@ -1592,7 +1587,6 @@
         }
     };
 
-    // Initialisation
     document.addEventListener("DOMContentLoaded", () => {
         window.setModuleIndex(0);
         window.setHeroSlide('smartpush');
