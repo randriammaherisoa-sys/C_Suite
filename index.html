@@ -17,7 +17,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&h=630&auto=format&fit=crop">
 
     <!-- Favicon -->
-    <link rel="icon" href="https://cdn.convrrt.com/apps/sendinblue/6761372/6aa995aa-40f4-4933-83ae-401c3ae0ae02.png" type="image/png">
+    <link class="brand-favicon" rel="icon" href="https://cdn.convrrt.com/apps/sendinblue/6761372/6aa995aa-40f4-4933-83ae-401c3ae0ae02.png" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -333,7 +333,7 @@
 <div id="main-content" class="w-full overflow-hidden">
 
     <!-- 1. HERO SECTION -->
-    <section id="hero" class="min-h-screen lg:h-screen lg:max-h-[850px] relative flex items-center overflow-hidden bg-white text-left pt-28 pb-20 lg:pt-32 lg:pb-24">
+    <section id="hero" class="min-h-screen lg:h-screen lg:max-h-[920px] relative flex items-center overflow-hidden bg-white text-left pt-28 pb-20 lg:pt-32 lg:pb-24">
         <!-- Arrière-plans & Dégradés de masquage doux -->
         <div class="absolute inset-0 z-0 pointer-events-none">
             <img src="https://cdn.convrrt.com/apps/sendinblue/6761372/608b1699-7f06-47b2-bedd-9591922c33d6.png" class="absolute inset-0 w-full h-full object-cover opacity-5 object-center transition-opacity duration-500 scale-x-[-1]" alt="Arrière-plan comete.ai" />
@@ -346,10 +346,11 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 w-full">
-            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <!-- Grid balanced to give more space to the video container (5 cols for text, 7 cols for the video frame) -->
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
                 
-                <!-- Texte de Présentation -->
-                <div class="lg:col-span-6 space-y-4 lg:space-y-6">
+                <!-- Texte de Présentation (lg:col-span-5 to make space for larger video) -->
+                <div class="lg:col-span-5 space-y-4 lg:space-y-6">
                     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 animate-fade-in shadow-sm">
                         <span class="w-2.5 h-2.5 rounded-full bg-themeAccent animate-pulse"></span>
                         <span class="text-[9px] md:text-[10px] uppercase tracking-[0.12em] text-themeAccent font-black">C-Suite par comete.ai</span>
@@ -376,12 +377,14 @@
                     </div>
                 </div>
 
-                <!-- Habillage Premium de la Vidéo YouTube -->
-                <div class="lg:col-span-6 relative w-full mt-8 lg:mt-0">
+                <!-- Habillage Premium de la Vidéo YouTube (Agrandie & Autoplay avec mute) -->
+                <!-- lg:col-span-7 allows the frame to take a larger space on large screens -->
+                <div class="lg:col-span-7 relative w-full mt-8 lg:mt-0">
                     <div class="absolute -inset-4 bg-gradient-to-tr from-themeAccent/20 to-cyan-400/20 rounded-3xl blur-2xl opacity-70 z-0"></div>
                     
-                    <div class="relative w-full max-w-[580px] mx-auto z-10 transition-all duration-500 hover:scale-[1.015]">
-                        <div class="bg-[#0b132a] rounded-[24px] p-2.5 sm:p-3.5 shadow-2xl border border-white/10 relative overflow-hidden">
+                    <!-- Increased max-width from 580px to 740px for a significantly larger and more impactful video presentation -->
+                    <div class="relative w-full max-w-[740px] mx-auto z-10 transition-all duration-500 hover:scale-[1.015]">
+                        <div class="bg-[#0b132a] rounded-[24px] p-2.5 sm:p-4 shadow-2xl border border-white/10 relative overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 pointer-events-none"></div>
                             
                             <!-- En-tête type "Application/Player" High-Tech -->
@@ -397,13 +400,14 @@
                                 </div>
                                 <div class="flex items-center gap-1.5 text-slate-400 text-xs">
                                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0"></span>
-                                    <span class="text-[9px] font-bold font-mono text-emerald-400 uppercase">Live</span>
+                                    <span class="text-[9px] font-bold font-mono text-emerald-400 uppercase">Live Autoplay</span>
                                 </div>
                             </div>
 
                             <!-- Conteneur Vidéo responsive aspect 16/9 -->
+                            <!-- Added autoplay=1&mute=1&playsinline=1 to play automatically on load without triggering block policy -->
                             <div class="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-slate-950 shadow-inner group">
-                                <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/vuA7MIyTcGM?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/vuA7MIyTcGM?autoplay=1&mute=1&playsinline=1&loop=1&playlist=vuA7MIyTcGM&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
                         </div>
 
@@ -487,7 +491,7 @@
                     </div>
                     <div class="bg-[#0b132a] border border-white/10 p-5 rounded-xl shadow-sm glow-card flex items-start gap-4 transition-all hover:scale-[1.02] text-white">
                         <span class="w-9 h-9 rounded-lg bg-emerald-50/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20"><i data-lucide="zap" class="w-4.5 h-4.5"></i></span>
-                        <div><h3 class="font-extrabold text-white text-[12px] mb-1">Accélérer le traitement des demandes</h3><p class="text-slate-350 text-[10.5px] leading-snug font-light">Automatiser le traitement documentaire et l'analyse OCR des justificatifs.</p></div>
+                        <div><h3 class="font-extrabold text-white text-[12px] mb-1">Accélérer le traitement des demandes</h3><p class="text-slate-350 text-[10px] leading-snug font-light">Automatiser le traitement documentaire et l'analyse OCR des justificatifs.</p></div>
                     </div>
                     <div class="bg-[#0b132a] border border-white/10 p-5 rounded-xl shadow-sm glow-card flex items-start gap-4 transition-all hover:scale-[1.02] text-white">
                         <span class="w-9 h-9 rounded-lg bg-purple-50/10 text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/20"><i data-lucide="bar-chart" class="w-4.5 h-4.5"></i></span>
@@ -962,7 +966,7 @@
             <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-100/50 rounded-full filter blur-[100px]"></div>
             <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-cyan-100/40 rounded-full filter blur-[100px]"></div>
             
-            <!-- Masques de transition haut/bas pour estomper la grille KPI (Fading seamlessly to the next section's gris clair color) -->
+            <!-- Masques de transition haut/bas pour estomper la grille KPI -->
             <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent"></div>
             <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f8fafc] to-transparent"></div>
         </div>
